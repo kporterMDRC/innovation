@@ -1,0 +1,30 @@
+---
+title: "Using LLM's to Code"
+author: "Your Name"
+date: "2024-12-06"
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook:
+    toc_depth: 3
+---
+
+# Recipes {-}
+
+## [Code Generation](#codegen)
+- [Make a template for a R Bookdown site](#template)
+- [Create code from scratch](#scratch)
+
+## [Debugging](#debugging) 
+
+
+
+# Part I: Getting Started {#codegen}
+
+### Make a template for a R Bookdown site {#template}
+
+### Key Concepts {#scratch}
+
+Content here...
+
+
+# Part II: Advanced Topics {#debugging}
