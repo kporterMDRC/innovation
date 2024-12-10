@@ -1,5 +1,0 @@
-code-generation
-debugging
-codegen
-template
-scratch
