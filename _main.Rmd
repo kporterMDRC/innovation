@@ -12,7 +12,8 @@ output:
 
 ## [Starters](#template)
 
--   [Make an R notebook or R Bookdown site that starts from a text outline](#notebook)
+-   [Make an R notebook that starts from a text outline](#notebook)
+-   [Make a template for a R Bookdown site](#bookdown)
 -   [Build a Shiny dashboard template](#shiny)
 
 ## [Create code from scratch](#scratch)
@@ -62,171 +63,7 @@ output:
 
 # Starters {#template}
 
-### Make an R notebook or R Bookdown site that starts from a text outline {#notebook}
-
-**Ingredients:**
-
--   Text outline with hierarchical structure
-
-<!-- -->
-
--   Desired output type (notebook or bookdown)
-
-<!-- -->
-
--   Title for the document/site
-
-<!-- -->
-
--   Author information (optional)
-
-<!-- -->
-
--   Theme preferences (optional)
-
-**Prompt:** Please convert this outline into [choose: an R notebook OR a bookdown site]:
-
-[paste outline here]
-
-Requirements: 1. Output type: [choose one] - Single R notebook (html_notebook, pdf_document, word_document) - Bookdown site (gitbook, pdf_book, epub_book) 2. Title: [specify title] 3. Author: [specify author if desired] 4. Structure preferences: - [specify if you want chapters split into files (bookdown only)] - [specify header level preferences] - [specify if you want placeholder chunks] - [specify theme preferences] 5. Special features: [choose any] - Table of contents - Section numbering - Chapter cross-references (bookdown only) - Figure/table captions - Custom CSS
-
-**Tips:**
-
--   For notebooks:
-
-    -   Keep all content in one file
-
-    -   Use headers for navigation
-
-    -   Consider chunk naming conventions
-
-<!-- -->
-
--   For bookdown:
-
-    -   Use separate .Rmd files for chapters
-
-    -   Number files to control order (e.g., 01-intro.Rmd)
-
-    -   Include index.Rmd for site configuration
-
-    -   Consider \_bookdown.yml for site settings
-
-**Serves:**
-
--   Single document reports (notebooks)
-
-<!-- -->
-
--   Multi-chapter books (bookdown)
-
-<!-- -->
-
--   Documentation sites
-
-<!-- -->
-
--   Course materials
-
-<!-- -->
-
--   Technical manuals
-
-<!-- -->
-
--   Project documentation
-
-[**Example:**](https://chatgpt.com/c/6757cc7f-3e70-8012-ae74-3c3950f3e54d)
-
-Please convert this outline into an R notebook structure:
-
-Writing Effective Functions 1. Function Basics - Purpose - Components 2. Best Practices - Naming conventions - Documentation 3. Examples - Simple function - Complex function
-
-Requirements: 1. Output format: html_notebook 2. Title: Guide to Writing Effective R Functions 3. Structure preferences: - Add placeholder code chunks where examples would go - Include section numbers - Add a table of contents
-
-### Build a Shiny dashboard template {#Shiny}
-
-**Ingredients:**
-
--   List of desired dashboard components
-
--   Layout structure preferences
-
--   Navigation style
-
--   Theme preferences
-
--   Intended dashboard functionality
-
-**Prompt:**
-
-Please create a Shiny dashboard template with these specifications:
-
-Layout: 1. Navigation: [choose one] - Sidebar menu - Navbar - Tabset panel 2. Components: [list desired elements] - Header/title - Sidebar widgets - Main panels - Footer 3. Theme: [specify preferences] - Dashboard theme - Color scheme - Custom CSS
-
-Content Areas: [paste outline of content areas]
-
-Widgets needed: [list interactive elements needed]
-
-Special features: [choose any] - Collapsible panels - Custom branding - Loading spinners - Notifications - User authentication
-
-**Tips:**
-
--   Specify layout before content
-
--   List all interactive widgets upfront
-
--   Consider mobile responsiveness needs
-
--   Include error handling preferences
-
--   Mention any conditional panels
-
--   Specify reactive dependencies
-
--   Note any performance requirements
-
-**Serves:**
-
--   Data visualization dashboards
-
--   Monitoring applications
-
--   Interactive reports
-
--   Best used by coders with some knowledge of Shiny
-
-[**Example:**](https://chatgpt.com/c/6757cf8d-eb4c-8012-b517-57ec8e30459b)
-
-Please create a Shiny dashboard template with these specifications:
-
-Layout:
-
-1\. Navigation: Sidebar menu
-
-2\. Components: - Company logo in header - Sidebar with date range and filters - Three main content areas - Info footer
-
-3\. Theme: - dashboardthemes::custom_theme - Blue/white color scheme
-
-Content Areas:
-
-1\. Overview - Summary metrics - Trend chart
-
-2\. Details - Data table - Filter
-
-3\. Analysis - Interactive plots - Download reports
-
-Widgets needed: - Date range picker - Select inputs for filtering - Action buttons for reports - Data table with download - Plot customization options
-
-Special features:
-
--   Loading spinners for plots
-
--   Collapsible sidebar
-
--   Error notifications
-
--   Export functionality
+### Make an R notebook that starts from a text outline {#notebook}
 
 ### Generate new code using a specific package {#new}
 
@@ -297,144 +134,14 @@ map_df(list_of_files, ~read_csv(.x) %>%
 
 Specifically, I don't understand what the .x does and why we need it. Context: Comfortable with basic R but new to purrr.
 
+
+### Make a template for a R Bookdown site {#bookdown}
+
 ### Build a Shiny dashboard template {#shiny}
-
-**Ingredients:**
-
--   List of desired dashboard components
-
--   Layout structure preferences
-
--   Navigation style
-
--   Theme preferences
-
--   Intended dashboard functionality
-
-**Prompt:**
-
-Please create a Shiny dashboard template with these specifications:
-
-Layout:
-
-1\. Navigation: [choose one]
-
--   Sidebar menu
-
--   Navbar
-
--   Tabset panel
-
-2\. Components: [list desired elements
-
--    Header/title
-
--   Sidebar widgets
-
--   Main panels
-
--   Footer
-
-3\. Theme: [specify preferences]
-
--   Dashboard them
-
--   Color scheme
-
--   Custom CSS
-
-Content Areas: [paste outline of content areas]
-
-Widgets needed: [list interactive elements needed]
-
-Special features: [choose any]
-
--   Collapsible panels
-
--   Custom branding
-
--   Loading spinners
-
--   Notifications
-
--   User authentication
-
-**Tips:**
-
--   Specify layout before content
-
--   List all interactive widgets upfront
-
--   Consider mobile responsiveness needs
-
--   Include error handling preferences
-
--   Mention any conditional panels
-
--   Specify reactive dependencies
-
--   Note any performance requirements
-
-**Serves:**
-
--   Data visualization dashboards
-
--   Monitoring applications
-
--   Interactive reports
-
--   Business analytics tools
-
--   Administrative interfaces
-
--   Decision support systems
-
-**Example:**
-
-Please create a Shiny dashboard template with these specifications:
-
-Layout:
-1. Navigation: Sidebar menu
-2. Components:
-   - Company logo in header
-   - Sidebar with date range and filters
-   - Three main content areas
-   - Info footer
-3. Theme: 
-   - dashboardthemes::custom_theme
-   - Blue/white color scheme
-
-Content Areas:
-1. Overview
-   - Summary metrics
-   - Trend chart
-2. Details
-   - Data table
-   - Filters
-3. Analysis
-   - Interactive plots
-   - Download reports
-
-Widgets needed:
--   Date range picker
-
--   Select inputs for filtering
-
--   Action buttons for reports
-
--   Data table with download
-
--   Plot customization options
-
-Special features:
-- Loading spinners for plots
-- Collapsible sidebar
-- Error notifications
-- Export functionality
 
 # Create code from scratch {#scratch}
 
-### Generate new code using a specific package
+### Generate new code using a specific package {#new}
 
 **Ingredients:**
 
@@ -469,13 +176,13 @@ Context: `constraints` (optional)
 
 Using `dplyr`, write code to filter the tibble `my_tibble` to rows in which the column `employed` is TRUE and assign the result to a new tibble called `new_tibble`. Context: Advanced programmer who is rusty with `dplyr`.
 
-### Generate variations based on an example
+### Generate variations based on an example {#example}
 
-### Generate unit tests for a function
+### Generate unit tests for a function {#unittest}
 
-# Demystifying Code or Output
+# Demystifying Code or Output {#explain}
 
-### Explain complex code
+### Explain complex code {#explaincode}
 
 **Ingredients:** - Working code snippet - Any error messages (if relevant) - Package versions (if causing issues) - Context about what seems unclear
 
@@ -575,3 +282,6 @@ Context: Need to report key findings in Results section.
 ### Synthesize data to match what is need to run a script {#scriptmatch}
 
 ### Synthesize data to match a set of column names {#columnmatch}
+
+<!--chapter:end:index.Rmd-->
+

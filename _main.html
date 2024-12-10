@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Using LLM’s to Code</title>
+  <meta name="description" content="Using LLM’s to Code" />
+  <meta name="generator" content="bookdown #bookdown:version# and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Using LLM’s to Code" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Using LLM’s to Code" />
+  
+  
+  
+
+<meta name="author" content="Your Name" />
+
+
+<meta name="date" content="2024-12-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+<!--bookdown:title:start-->
+<div id="header">
+<h1 class="title">Using LLM’s to Code</h1>
+<p class="author"><em>Your Name</em></p>
+<p class="date"><em>2024-12-06</em></p>
+</div>
+<!--bookdown:title:end-->
+
+<!--bookdown:toc:start-->
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+<!--bookdown:toc2:start-->
+<ul>
+<li><a href="#recipes" id="toc-recipes">Recipes</a>
+<ul>
+<li><a href="#starters" id="toc-starters">Starters</a></li>
+<li><a href="#create-code-from-scratch" id="toc-create-code-from-scratch">Create code from scratch</a></li>
+<li><a href="#demystifying-code-or-output" id="toc-demystifying-code-or-output">Demystifying Code or Output</a></li>
+<li><a href="#troubleshooting" id="toc-troubleshooting">Troubleshooting</a></li>
+<li><a href="#documentation" id="toc-documentation">Documentation</a></li>
+<li><a href="#code-expansion-or-improvement" id="toc-code-expansion-or-improvement">Code expansion or improvement</a></li>
+<li><a href="#translation" id="toc-translation">Translation</a></li>
+<li><a href="#data-generation-generate" id="toc-data-generation-generate">Data generation (#generate)</a></li>
+</ul></li>
+<li><a href="#shots" id="toc-shots">Shots</a></li>
+<li><a href="#mixing-in-an-llm" id="toc-mixing-in-an-llm">Mixing in an LLM</a></li>
+<li><a href="#template" id="toc-template">Starters</a>
+<ul>
+<li><a href="#notebook" id="toc-notebook">Make an R notebook that starts from a text outline</a></li>
+<li><a href="#new" id="toc-new">Generate new code using a specific package</a></li>
+<li><a href="#example" id="toc-example">Generate variations based on an example</a></li>
+<li><a href="#unittest" id="toc-unittest">Generate unit tests for a function</a></li>
+</ul></li>
+<li><a href="#explain" id="toc-explain">Demystifying Code or Output</a>
+<ul>
+<li><a href="#explaincode" id="toc-explaincode">Explain complex code</a></li>
+<li><a href="#bookdown" id="toc-bookdown">Make a template for a R Bookdown site</a></li>
+<li><a href="#shiny" id="toc-shiny">Build a Shiny dashboard template</a></li>
+</ul></li>
+<li><a href="#scratch" id="toc-scratch">Create code from scratch</a>
+<ul>
+<li><a href="#new" id="toc-new">Generate new code using a specific package</a></li>
+<li><a href="#example" id="toc-example">Generate variations based on an example</a></li>
+<li><a href="#unittest" id="toc-unittest">Generate unit tests for a function</a></li>
+</ul></li>
+<li><a href="#explain" id="toc-explain">Demystifying Code or Output</a>
+<ul>
+<li><a href="#explaincode" id="toc-explaincode">Explain complex code</a></li>
+<li><a href="#explainoutput" id="toc-explainoutput">Explain output</a></li>
+</ul></li>
+<li><a href="#debugging" id="toc-debugging">Troubleshooting</a>
+<ul>
+<li><a href="#error" id="toc-error">Debug confusing error messages</a></li>
+<li><a href="#merge" id="toc-merge">Fix a Git merge conflict</a></li>
+</ul></li>
+<li><a href="#document" id="toc-document">Documentation</a>
+<ul>
+<li><a href="#roxygen" id="toc-roxygen">Generate roxygen2 documentation</a></li>
+<li><a href="#readme" id="toc-readme">Create README.md files</a></li>
+<li><a href="#vignette" id="toc-vignette">Write package vignettes</a></li>
+<li><a href="#dictionary" id="toc-dictionary">Document data dictionaries</a></li>
+<li><a href="#examples" id="toc-examples">Create function usage examples</a></li>
+</ul></li>
+<li><a href="#improve" id="toc-improve">Code expansion or improvement</a>
+<ul>
+<li><a href="#optimize" id="toc-optimize">Optimize code for speed</a></li>
+<li><a href="#errorhandle" id="toc-errorhandle">Add error handling</a></li>
+<li><a href="#functions" id="toc-functions">Convert code to function</a></li>
+<li><a href="#modular" id="toc-modular">Make code more modular</a></li>
+</ul></li>
+<li><a href="#translate" id="toc-translate">Translation</a>
+<ul>
+<li><a href="#trans1" id="toc-trans1">Translate coding languages</a></li>
+<li><a href="#trans2" id="toc-trans2">Translate Word to markdown</a></li>
+</ul></li>
+<li><a href="#generate" id="toc-generate">Data generation</a>
+<ul>
+<li><a href="#scriptmatch" id="toc-scriptmatch">Synthesize data to match what is need to run a script</a></li>
+<li><a href="#columnmatch" id="toc-columnmatch">Synthesize data to match a set of column names</a></li>
+</ul></li>
+</ul>
+<!--bookdown:toc2:end-->
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Using LLM’s to Code</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:toc:end-->
+<!--bookdown:body:start-->
+<div id="recipes" class="section level1 unnumbered hasAnchor">
+<h1 class="unnumbered hasAnchor">Recipes<a href="#recipes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="starters" class="section level2 hasAnchor">
+<h2 class="hasAnchor"><a href="#template">Starters</a><a href="#starters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="#notebook">Make an R notebook that starts from a text outline</a></li>
+<li><a href="#bookdown">Make a template for a R Bookdown site</a></li>
+<li><a href="#shiny">Build a Shiny dashboard template</a></li>
+</ul>
+</div>
+<div id="create-code-from-scratch" class="section level2 hasAnchor">
+<h2 class="hasAnchor"><a href="#scratch">Create code from scratch</a><a href="#create-code-from-scratch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="#new">Generate new code using a specific package</a></li>
+<li><a href="#example">Generate variations based on an example</a></li>
+<li><a href="#unittest">Generate unit tests for a function</a></li>
+</ul>
+</div>
+<div id="demystifying-code-or-output" class="section level2 hasAnchor">
+<h2 class="hasAnchor"><a href="#explain">Demystifying Code or Output</a><a href="#demystifying-code-or-output" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="#explaincode">Explain complex code</a></li>
+<li><a href="#explainoutput">Explain output</a></li>
+</ul>
+</div>
+<div id="troubleshooting" class="section level2 hasAnchor">
+<h2 class="hasAnchor"><a href="#debugging">Troubleshooting</a><a href="#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="#error">Debug confusing error messages</a></li>
+<li><a href="#merge">Fix a Git merge conflict</a></li>
+</ul>
+</div>
+<div id="documentation" class="section level2 hasAnchor">
+<h2 class="hasAnchor"><a href="#document">Documentation</a><a href="#documentation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="#roxygen">Generate roxygen2 documentation</a></li>
+<li><a href="#readme">Create README.md files</a></li>
+<li><a href="#vignette">Write package vignettes</a></li>
+<li><a href="#dictionary">Document data dictionaries</a></li>
+<li><a href="#examples">Create function usage examples</a></li>
+</ul>
+</div>
+<div id="code-expansion-or-improvement" class="section level2 hasAnchor">
+<h2 class="hasAnchor"><a href="#improve">Code expansion or improvement</a><a href="#code-expansion-or-improvement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="#optimize">Optimize code for speed</a></li>
+<li><a href="#errorhandle">Add error handling</a></li>
+<li><a href="#functions">Convert code to function</a></li>
+<li><a href="#modular">Make code more modular</a></li>
+</ul>
+</div>
+<div id="translation" class="section level2 hasAnchor">
+<h2 class="hasAnchor"><a href="#translate">Translation</a><a href="#translation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="#trans1">Translate coding languages</a></li>
+<li><a href="#trans2">Translate Word to markdown</a></li>
+</ul>
+</div>
+<div id="data-generation-generate" class="section level2 hasAnchor">
+<h2 class="hasAnchor"><a href="#generate">Data generation</a> (#generate)<a href="#data-generation-generate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="#scriptmatch">Synthesize data to match what is need to run a script</a></li>
+<li><a href="#columnmatch">Synthesize data to match a set of column names</a></li>
+</ul>
+</div>
+</div>
+<div id="shots" class="section level1 hasAnchor">
+<h1 class="hasAnchor">Shots<a href="#shots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+</div>
+<div id="mixing-in-an-llm" class="section level1 hasAnchor">
+<h1 class="hasAnchor">Mixing in an LLM<a href="#mixing-in-an-llm" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+</div>
+<div id="template" class="section level1 hasAnchor">
+<h1 class="hasAnchor">Starters<a href="#template" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="notebook" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Make an R notebook that starts from a text outline<a href="#notebook" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="new" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Generate new code using a specific package<a href="#new" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Ingredients:</strong></p>
+<ul>
+<li><p>Package name</p></li>
+<li><p>Specific task</p></li>
+<li><p>Any helpful context</p></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<p>Using <code>package</code>, write code to <code>task</code>.<br />
+Context: <code>constraints</code> (optional)</p>
+<p><strong>Tips:</strong></p>
+<ul>
+<li><p>Add data structure for more specific results.</p></li>
+<li><p>Mention actual names of objects, rows and columns for easier pasting.</p></li>
+<li><p>Specify output format if you have a preference.</p></li>
+</ul>
+<p><strong>Serves:</strong></p>
+<ul>
+<li><p>Small workflows</p></li>
+<li><p>Best for discrete tasks rather than full applications.</p></li>
+<li><p>Works well for both data manipulation and visualization tasks.</p></li>
+</ul>
+<p><a href="https://chatgpt.com/c/6753a0f3-6080-8012-a262-85c6e44e77aa"><strong>Example:</strong></a></p>
+<p>Using <code>dplyr</code>, write code to filter the tibble <code>my_tibble</code> to rows in which the column <code>employed</code> is TRUE and assign the result to a new tibble called <code>new_tibble</code>. Context: Advanced programmer who is rusty with <code>dplyr</code>.</p>
+</div>
+<div id="example" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Generate variations based on an example<a href="#example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="unittest" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Generate unit tests for a function<a href="#unittest" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="explain" class="section level1 hasAnchor">
+<h1 class="hasAnchor">Demystifying Code or Output<a href="#explain" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="explaincode" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Explain complex code<a href="#explaincode" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Ingredients:</strong> - Working code snippet - Any error messages (if relevant) - Package versions (if causing issues) - Context about what seems unclear</p>
+<p><strong>Instructions:</strong> Please explain how this code works:</p>
+<pre><code>[paste code here]</code></pre>
+<p>Specifically, I don’t understand <code>[unclear parts]</code>.</p>
+<p><strong>Tips:</strong> - Share what you think it does to get better corrections - Include sample input/output if available - Mention your R experience level for appropriate detail - Point out specific lines or functions that confuse you</p>
+<p><strong>Serves:</strong> - Complex functions or pipelines - Multi-step operations - Package-specific syntax questions - Unfamiliar coding patterns</p>
+<p><a href="https://chatgpt.com/c/6753a097-4df0-8012-96c7-2eceb30e5584"><strong>Example:</strong></a></p>
+<p>Please explain how this code works:</p>
+<pre><code>map_df(list_of_files, ~read_csv(.x) %&gt;% 
+  select(starts_with(&quot;Q&quot;)) %&gt;%
+  pivot_longer(everything()))</code></pre>
+<p>Specifically, I don’t understand what the .x does and why we need it. Context: Comfortable with basic R but new to purrr.</p>
+</div>
+<div id="bookdown" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Make a template for a R Bookdown site<a href="#bookdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="shiny" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Build a Shiny dashboard template<a href="#shiny" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="scratch" class="section level1 hasAnchor">
+<h1 class="hasAnchor">Create code from scratch<a href="#scratch" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="new" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Generate new code using a specific package<a href="#new" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Ingredients:</strong></p>
+<ul>
+<li><p>Package name</p></li>
+<li><p>Specific task</p></li>
+<li><p>Any helpful context</p></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<p>Using <code>package</code>, write code to <code>task</code>.<br />
+Context: <code>constraints</code> (optional)</p>
+<p><strong>Tips:</strong></p>
+<ul>
+<li><p>Add data structure for more specific results.</p></li>
+<li><p>Mention actual names of objects, rows and columns for easier pasting.</p></li>
+<li><p>Specify output format if you have a preference.</p></li>
+</ul>
+<p><strong>Serves:</strong></p>
+<ul>
+<li><p>Small workflows</p></li>
+<li><p>Best for discrete tasks rather than full applications.</p></li>
+<li><p>Works well for both data manipulation and visualization tasks.</p></li>
+</ul>
+<p><a href="https://chatgpt.com/c/6753a0f3-6080-8012-a262-85c6e44e77aa"><strong>Example:</strong></a></p>
+<p>Using <code>dplyr</code>, write code to filter the tibble <code>my_tibble</code> to rows in which the column <code>employed</code> is TRUE and assign the result to a new tibble called <code>new_tibble</code>. Context: Advanced programmer who is rusty with <code>dplyr</code>.</p>
+</div>
+<div id="example" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Generate variations based on an example<a href="#example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="unittest" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Generate unit tests for a function<a href="#unittest" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="explain" class="section level1 hasAnchor">
+<h1 class="hasAnchor">Demystifying Code or Output<a href="#explain" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="explaincode" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Explain complex code<a href="#explaincode" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Ingredients:</strong> - Working code snippet - Any error messages (if relevant) - Package versions (if causing issues) - Context about what seems unclear</p>
+<p><strong>Instructions:</strong> Please explain how this code works:</p>
+<pre><code>[paste code here]</code></pre>
+<p>Specifically, I don’t understand <code>[unclear parts]</code>.</p>
+<p><strong>Tips:</strong> - Share what you think it does to get better corrections - Include sample input/output if available - Mention your R experience level for appropriate detail - Point out specific lines or functions that confuse you</p>
+<p><strong>Serves:</strong> - Complex functions or pipelines - Multi-step operations - Package-specific syntax questions - Unfamiliar coding patterns</p>
+<p><a href="https://chatgpt.com/c/6753a097-4df0-8012-96c7-2eceb30e5584"><strong>Example:</strong></a></p>
+<p>Please explain how this code works:</p>
+<pre><code>map_df(list_of_files, ~read_csv(.x) %&gt;% 
+  select(starts_with(&quot;Q&quot;)) %&gt;%
+  pivot_longer(everything()))</code></pre>
+<p>Specifically, I don’t understand what the .x does and why we need it. Context: Comfortable with basic R but new to purrr.</p>
+</div>
+<div id="explainoutput" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Explain output<a href="#explainoutput" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Ingredients:</strong> - Complete output to examine - Function or method that generated it - What decisions you need to make from it - Your stats/methods background (optional)</p>
+<p><strong>Instructions:</strong> Here’s the output from <code>[function]</code>:</p>
+<pre><code>[paste output here]</code></pre>
+<p>Please explain what this tells me about <code>[key question]</code>.</p>
+<p><strong>Tips:</strong> - Include the code that generated the output if relevant - Highlight specific numbers you’re unsure about - Mention if you need plain English or technical terms - State if you need to report this for publication</p>
+<p><strong>Serves:</strong> - Statistical output interpretation - Model diagnostics - Test results - Complex summaries</p>
+<p><a href="https://chatgpt.com/c/6753a02a-2bec-8012-9fde-4f00cc4c864a"><strong>Example:</strong></a></p>
+<pre><code>Here&#39;s the output from lm():
+Call:
+lm(formula = weight ~ height + age, data = df)
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -32.4521     8.4388  -3.845 0.000141 ***
+height        0.3128     0.0912   3.429 0.000684 ***
+age           0.0234     0.0412   0.568 0.570577    
+
+Please explain what this tells me about which predictors matter for weight.
+Context: Need to report key findings in Results section.</code></pre>
+</div>
+</div>
+<div id="debugging" class="section level1 hasAnchor">
+<h1 class="hasAnchor">Troubleshooting<a href="#debugging" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="error" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Debug confusing error messages<a href="#error" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="merge" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Fix a Git merge conflict<a href="#merge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="document" class="section level1 hasAnchor">
+<h1 class="hasAnchor">Documentation<a href="#document" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="roxygen" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Generate roxygen2 documentation<a href="#roxygen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="readme" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Create README.md files<a href="#readme" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="vignette" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Write package vignettes<a href="#vignette" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="dictionary" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Document data dictionaries<a href="#dictionary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="examples" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Create function usage examples<a href="#examples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="improve" class="section level1 hasAnchor">
+<h1 class="hasAnchor">Code expansion or improvement<a href="#improve" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="optimize" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Optimize code for speed<a href="#optimize" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="errorhandle" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Add error handling<a href="#errorhandle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="functions" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Convert code to function<a href="#functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="modular" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Make code more modular<a href="#modular" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="translate" class="section level1 hasAnchor">
+<h1 class="hasAnchor">Translation<a href="#translate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="trans1" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Translate coding languages<a href="#trans1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="trans2" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Translate Word to markdown<a href="#trans2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="generate" class="section level1 hasAnchor">
+<h1 class="hasAnchor">Data generation<a href="#generate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="scriptmatch" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Synthesize data to match what is need to run a script<a href="#scriptmatch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="columnmatch" class="section level3 hasAnchor">
+<h3 class="hasAnchor">Synthesize data to match a set of column names<a href="#columnmatch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!--chapter:end:index.Rmd-->
+</div>
+</div>
+<!--bookdown:body:end-->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+    </div>
+  </div>
+<!--bookdown:config-->
+
+</body>
+
+</html>

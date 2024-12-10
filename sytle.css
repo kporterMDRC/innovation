@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cambria&display=swap');
+
+:root {
+    --main-font: Cambria, Georgia, serif;
+}
+
+body, p, .book-body {
+    font-family: var(--main-font) !important;
+}
+
+.book-summary {
+    font-family: var(--main-font) !important;
+}
