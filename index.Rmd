@@ -454,7 +454,11 @@ Using `dplyr`, write code to filter the tibble `my_tibble` to rows in which the 
 
 ### Explain complex code
 
-**Ingredients:** - Working code snippet - Any error messages (if relevant) - Package versions (if causing issues) - Context about what seems unclear
+**Ingredients:**
+
+-   Working code snippet
+
+-   Context about what seems unclear
 
 **Instructions:** Please explain how this code works:
 
