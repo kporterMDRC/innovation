@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Part II: Advanced Topics | Using LLM’s to Code</title>
-  <meta name="description" content="2 Part II: Advanced Topics | Using LLM’s to Code" />
+  <title>Troubleshooting | Using LLM’s to Code</title>
+  <meta name="description" content="Troubleshooting | Using LLM’s to Code" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Part II: Advanced Topics | Using LLM’s to Code" />
+  <meta property="og:title" content="Troubleshooting | Using LLM’s to Code" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Part II: Advanced Topics | Using LLM’s to Code" />
+  <meta name="twitter:title" content="Troubleshooting | Using LLM’s to Code" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="codegen.html"/>
-
+<link rel="prev" href="demystifying-code-or-output-1.html"/>
+<link rel="next" href="document.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -60,6 +60,7 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -72,17 +73,75 @@
       <nav role="navigation">
 
 <ul class="summary">
+<li><a href="./">Your Book Title</a></li>
+<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Recipes</a>
 <ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#code-generation"><i class="fa fa-check"></i><b>0.1</b> Code Generation</a></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#debugging"><i class="fa fa-check"></i><b>0.2</b> Debugging</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#starters"><i class="fa fa-check"></i>Starters</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#create-code-from-scratch"><i class="fa fa-check"></i>Create code from scratch</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#demystifying-code-or-output"><i class="fa fa-check"></i>Demystifying Code or Output</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#documentation"><i class="fa fa-check"></i>Documentation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#code-expansion-or-improvement"><i class="fa fa-check"></i>Code expansion or improvement</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#translation"><i class="fa fa-check"></i>Translation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#data-generation-generate"><i class="fa fa-check"></i>Data generation (#generate)</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="codegen.html"><a href="codegen.html"><i class="fa fa-check"></i><b>1</b> Part I: Getting Started</a>
+<li class="chapter" data-level="" data-path="shots.html"><a href="shots.html"><i class="fa fa-check"></i>Shots</a></li>
+<li class="chapter" data-level="" data-path="mixing-in-an-llm.html"><a href="mixing-in-an-llm.html"><i class="fa fa-check"></i>Mixing in an LLM</a></li>
+<li class="chapter" data-level="" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i>Starters</a>
 <ul>
-<li class="chapter" data-level="1.0.1" data-path="codegen.html"><a href="codegen.html#template"><i class="fa fa-check"></i><b>1.0.1</b> Make a template for a R Bookdown site</a></li>
-<li class="chapter" data-level="1.0.2" data-path="codegen.html"><a href="codegen.html#scratch"><i class="fa fa-check"></i><b>1.0.2</b> Key Concepts</a></li>
+<li class="chapter" data-level="" data-path="template.html"><a href="template.html#notebook"><i class="fa fa-check"></i>Make an R notebook or R Bookdown site that starts from a text outline</a></li>
+<li class="chapter" data-level="" data-path="template.html"><a href="template.html#Shiny"><i class="fa fa-check"></i>Build a Shiny dashboard template</a></li>
+<li class="chapter" data-level="" data-path="template.html"><a href="template.html#new"><i class="fa fa-check"></i>Generate new code using a specific package</a></li>
+<li class="chapter" data-level="" data-path="template.html"><a href="template.html#example"><i class="fa fa-check"></i>Generate variations based on an example</a></li>
+<li class="chapter" data-level="" data-path="template.html"><a href="template.html#unittest"><i class="fa fa-check"></i>Generate unit tests for a function</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="index.html"><a href="index.html#debugging"><i class="fa fa-check"></i><b>2</b> Part II: Advanced Topics</a></li>
+<li class="chapter" data-level="" data-path="explain.html"><a href="explain.html"><i class="fa fa-check"></i>Demystifying Code or Output</a>
+<ul>
+<li class="chapter" data-level="" data-path="explain.html"><a href="explain.html#explaincode"><i class="fa fa-check"></i>Explain complex code</a></li>
+<li class="chapter" data-level="" data-path="explain.html"><a href="explain.html#shiny"><i class="fa fa-check"></i>Build a Shiny dashboard template</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="scratch.html"><a href="scratch.html"><i class="fa fa-check"></i>Create code from scratch</a>
+<ul>
+<li class="chapter" data-level="" data-path="scratch.html"><a href="scratch.html#generate-new-code-using-a-specific-package"><i class="fa fa-check"></i>Generate new code using a specific package</a></li>
+<li class="chapter" data-level="" data-path="scratch.html"><a href="scratch.html#generate-variations-based-on-an-example"><i class="fa fa-check"></i>Generate variations based on an example</a></li>
+<li class="chapter" data-level="" data-path="scratch.html"><a href="scratch.html#generate-unit-tests-for-a-function"><i class="fa fa-check"></i>Generate unit tests for a function</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="demystifying-code-or-output-1.html"><a href="demystifying-code-or-output-1.html"><i class="fa fa-check"></i>Demystifying Code or Output</a>
+<ul>
+<li class="chapter" data-level="" data-path="demystifying-code-or-output-1.html"><a href="demystifying-code-or-output-1.html#explain-complex-code"><i class="fa fa-check"></i>Explain complex code</a></li>
+<li class="chapter" data-level="" data-path="demystifying-code-or-output-1.html"><a href="demystifying-code-or-output-1.html#explainoutput"><i class="fa fa-check"></i>Explain output</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i>Troubleshooting</a>
+<ul>
+<li class="chapter" data-level="" data-path="debugging.html"><a href="debugging.html#error"><i class="fa fa-check"></i>Debug confusing error messages</a></li>
+<li class="chapter" data-level="" data-path="debugging.html"><a href="debugging.html#merge"><i class="fa fa-check"></i>Fix a Git merge conflict</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="document.html"><a href="document.html"><i class="fa fa-check"></i>Documentation</a>
+<ul>
+<li class="chapter" data-level="" data-path="document.html"><a href="document.html#roxygen"><i class="fa fa-check"></i>Generate roxygen2 documentation</a></li>
+<li class="chapter" data-level="" data-path="document.html"><a href="document.html#readme"><i class="fa fa-check"></i>Create README.md files</a></li>
+<li class="chapter" data-level="" data-path="document.html"><a href="document.html#vignette"><i class="fa fa-check"></i>Write package vignettes</a></li>
+<li class="chapter" data-level="" data-path="document.html"><a href="document.html#dictionary"><i class="fa fa-check"></i>Document data dictionaries</a></li>
+<li class="chapter" data-level="" data-path="document.html"><a href="document.html#examples"><i class="fa fa-check"></i>Create function usage examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="improve.html"><a href="improve.html"><i class="fa fa-check"></i>Code expansion or improvement</a>
+<ul>
+<li class="chapter" data-level="" data-path="improve.html"><a href="improve.html#optimize"><i class="fa fa-check"></i>Optimize code for speed</a></li>
+<li class="chapter" data-level="" data-path="improve.html"><a href="improve.html#errorhandle"><i class="fa fa-check"></i>Add error handling</a></li>
+<li class="chapter" data-level="" data-path="improve.html"><a href="improve.html#functions"><i class="fa fa-check"></i>Convert code to function</a></li>
+<li class="chapter" data-level="" data-path="improve.html"><a href="improve.html#modular"><i class="fa fa-check"></i>Make code more modular</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="translate.html"><a href="translate.html"><i class="fa fa-check"></i>Translation</a>
+<ul>
+<li class="chapter" data-level="" data-path="translate.html"><a href="translate.html#trans1"><i class="fa fa-check"></i>Translate coding languages</a></li>
+<li class="chapter" data-level="" data-path="translate.html"><a href="translate.html#trans2"><i class="fa fa-check"></i>Translate Word to markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="generate.html"><a href="generate.html"><i class="fa fa-check"></i>Data generation</a>
+<ul>
+<li class="chapter" data-level="" data-path="generate.html"><a href="generate.html#scriptmatch"><i class="fa fa-check"></i>Synthesize data to match what is need to run a script</a></li>
+<li class="chapter" data-level="" data-path="generate.html"><a href="generate.html#columnmatch"><i class="fa fa-check"></i>Synthesize data to match a set of column names</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -100,17 +159,22 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="debugging" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> Part II: Advanced Topics<a href="index.html#debugging" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-
+<div id="debugging" class="section level1 hasAnchor">
+<h1>Troubleshooting<a href="debugging.html#debugging" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="error" class="section level3 hasAnchor">
+<h3>Debug confusing error messages<a href="debugging.html#error" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="merge" class="section level3 hasAnchor">
+<h3>Fix a Git merge conflict<a href="debugging.html#merge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="codegen.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="demystifying-code-or-output-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="document.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -327,7 +327,7 @@ Layout:
 
 2\. Components: [list desired elements
 
--    Header/title
+-   Header/title
 
 -   Sidebar widgets
 
@@ -389,34 +389,15 @@ Special features: [choose any]
 
 -   Decision support systems
 
-**Example:**
+[**Example**](https://chatgpt.com/g/g-2NfgXOb1d-coding-in-r-studio-with-ai/c/6758cb12-4bdc-8012-9273-ff1bc54a9e47)**:**
 
 Please create a Shiny dashboard template with these specifications:
 
-Layout:
-1. Navigation: Sidebar menu
-2. Components:
-   - Company logo in header
-   - Sidebar with date range and filters
-   - Three main content areas
-   - Info footer
-3. Theme: 
-   - dashboardthemes::custom_theme
-   - Blue/white color scheme
+Layout: 1. Navigation: Sidebar menu 2. Components: - Company logo in header - Sidebar with date range and filters - Three main content areas - Info footer 3. Theme: - dashboardthemes::custom_theme - Blue/white color scheme
 
-Content Areas:
-1. Overview
-   - Summary metrics
-   - Trend chart
-2. Details
-   - Data table
-   - Filters
-3. Analysis
-   - Interactive plots
-   - Download reports
+Content Areas: 1. Overview - Summary metrics - Trend chart 2. Details - Data table - Filters 3. Analysis - Interactive plots - Download reports
 
-Widgets needed:
--   Date range picker
+Widgets needed: - Date range picker
 
 -   Select inputs for filtering
 
@@ -426,11 +407,7 @@ Widgets needed:
 
 -   Plot customization options
 
-Special features:
-- Loading spinners for plots
-- Collapsible sidebar
-- Error notifications
-- Export functionality
+Special features: - Loading spinners for plots - Collapsible sidebar - Error notifications - Export functionality
 
 # Create code from scratch {#scratch}
 

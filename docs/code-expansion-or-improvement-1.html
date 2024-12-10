@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 Code expansion or improvement | Using LLM’s to Code</title>
+  <meta name="description" content="8 Code expansion or improvement | Using LLM’s to Code" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 Code expansion or improvement | Using LLM’s to Code" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 Code expansion or improvement | Using LLM’s to Code" />
+  
+  
+  
+
+<meta name="author" content="Your Name" />
+
+
+<meta name="date" content="2024-12-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="documentation-1.html"/>
+<link rel="next" href="translation-1.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Your Book Title</a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Recipes</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#starters"><i class="fa fa-check"></i><b>0.1</b> Starters</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#create-code-from-scratch"><i class="fa fa-check"></i><b>0.2</b> Create code from scratch</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#demystifying-code-or-output"><i class="fa fa-check"></i><b>0.3</b> Demystifying Code or Output</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#troubleshooting"><i class="fa fa-check"></i><b>0.4</b> Troubleshooting</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#documentation"><i class="fa fa-check"></i><b>0.5</b> Documentation</a></li>
+<li class="chapter" data-level="0.6" data-path="index.html"><a href="index.html#code-expansion-or-improvement"><i class="fa fa-check"></i><b>0.6</b> Code expansion or improvement</a></li>
+<li class="chapter" data-level="0.7" data-path="index.html"><a href="index.html#translation"><i class="fa fa-check"></i><b>0.7</b> Translation</a></li>
+<li class="chapter" data-level="0.8" data-path="index.html"><a href="index.html#data-generation-generate"><i class="fa fa-check"></i><b>0.8</b> [Data generation] (#generate)</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="shots.html"><a href="shots.html"><i class="fa fa-check"></i><b>1</b> Shots</a></li>
+<li class="chapter" data-level="2" data-path="mixing-in-an-llm.html"><a href="mixing-in-an-llm.html"><i class="fa fa-check"></i><b>2</b> Mixing in an LLM</a></li>
+<li class="chapter" data-level="3" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>3</b> Starters</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="template.html"><a href="template.html#notebook"><i class="fa fa-check"></i><b>3.0.1</b> Make an R notebook that starts from a text outline</a></li>
+<li class="chapter" data-level="3.0.2" data-path="template.html"><a href="template.html#bookdown"><i class="fa fa-check"></i><b>3.0.2</b> Make a template for a R Bookdown site</a></li>
+<li class="chapter" data-level="3.0.3" data-path="template.html"><a href="template.html#shiny"><i class="fa fa-check"></i><b>3.0.3</b> Build a Shiny dashboard template</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="create-code-from-scratch-1.html"><a href="create-code-from-scratch-1.html"><i class="fa fa-check"></i><b>4</b> Create code from scratch</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="create-code-from-scratch-1.html"><a href="create-code-from-scratch-1.html#generate-new-code-using-a-specific-package"><i class="fa fa-check"></i><b>4.0.1</b> Generate new code using a specific package</a></li>
+<li class="chapter" data-level="4.0.2" data-path="create-code-from-scratch-1.html"><a href="create-code-from-scratch-1.html#generate-variations-based-on-an-example"><i class="fa fa-check"></i><b>4.0.2</b> Generate variations based on an example</a></li>
+<li class="chapter" data-level="4.0.3" data-path="create-code-from-scratch-1.html"><a href="create-code-from-scratch-1.html#generate-unit-tests-for-a-function"><i class="fa fa-check"></i><b>4.0.3</b> Generate unit tests for a function</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="demystifying-code-or-output-1.html"><a href="demystifying-code-or-output-1.html"><i class="fa fa-check"></i><b>5</b> Demystifying Code or Output</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="demystifying-code-or-output-1.html"><a href="demystifying-code-or-output-1.html#explain-complex-code"><i class="fa fa-check"></i><b>5.0.1</b> Explain complex code</a></li>
+<li class="chapter" data-level="5.0.2" data-path="demystifying-code-or-output-1.html"><a href="demystifying-code-or-output-1.html#explain-output"><i class="fa fa-check"></i><b>5.0.2</b> Explain output</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="troubleshooting-1.html"><a href="troubleshooting-1.html"><i class="fa fa-check"></i><b>6</b> Troubleshooting</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="troubleshooting-1.html"><a href="troubleshooting-1.html#debug-confusing-error-messages"><i class="fa fa-check"></i><b>6.0.1</b> Debug confusing error messages</a></li>
+<li class="chapter" data-level="6.0.2" data-path="troubleshooting-1.html"><a href="troubleshooting-1.html#fix-a-git-merge-conflict"><i class="fa fa-check"></i><b>6.0.2</b> Fix a Git merge conflict</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="documentation-1.html"><a href="documentation-1.html"><i class="fa fa-check"></i><b>7</b> Documentation</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="documentation-1.html"><a href="documentation-1.html#generate-roxygen2-documentation"><i class="fa fa-check"></i><b>7.0.1</b> Generate roxygen2 documentation</a></li>
+<li class="chapter" data-level="7.0.2" data-path="documentation-1.html"><a href="documentation-1.html#create-readme.md-files"><i class="fa fa-check"></i><b>7.0.2</b> Create README.md files</a></li>
+<li class="chapter" data-level="7.0.3" data-path="documentation-1.html"><a href="documentation-1.html#write-package-vignettes"><i class="fa fa-check"></i><b>7.0.3</b> Write package vignettes</a></li>
+<li class="chapter" data-level="7.0.4" data-path="documentation-1.html"><a href="documentation-1.html#document-data-dictionaries"><i class="fa fa-check"></i><b>7.0.4</b> Document data dictionaries</a></li>
+<li class="chapter" data-level="7.0.5" data-path="documentation-1.html"><a href="documentation-1.html#create-function-usage-examples"><i class="fa fa-check"></i><b>7.0.5</b> Create function usage examples</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="code-expansion-or-improvement-1.html"><a href="code-expansion-or-improvement-1.html"><i class="fa fa-check"></i><b>8</b> Code expansion or improvement</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="code-expansion-or-improvement-1.html"><a href="code-expansion-or-improvement-1.html#optimize-code-for-speed"><i class="fa fa-check"></i><b>8.0.1</b> Optimize code for speed</a></li>
+<li class="chapter" data-level="8.0.2" data-path="code-expansion-or-improvement-1.html"><a href="code-expansion-or-improvement-1.html#add-error-handling"><i class="fa fa-check"></i><b>8.0.2</b> Add error handling</a></li>
+<li class="chapter" data-level="8.0.3" data-path="code-expansion-or-improvement-1.html"><a href="code-expansion-or-improvement-1.html#convert-code-to-function"><i class="fa fa-check"></i><b>8.0.3</b> Convert code to function</a></li>
+<li class="chapter" data-level="8.0.4" data-path="code-expansion-or-improvement-1.html"><a href="code-expansion-or-improvement-1.html#make-code-more-modular"><i class="fa fa-check"></i><b>8.0.4</b> Make code more modular</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="translation-1.html"><a href="translation-1.html"><i class="fa fa-check"></i><b>9</b> Translation</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="translation-1.html"><a href="translation-1.html#translate-coding-languages"><i class="fa fa-check"></i><b>9.0.1</b> Translate coding languages</a></li>
+<li class="chapter" data-level="9.0.2" data-path="translation-1.html"><a href="translation-1.html#translate-word-to-markdown"><i class="fa fa-check"></i><b>9.0.2</b> Translate Word to markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="data-generation.html"><a href="data-generation.html"><i class="fa fa-check"></i><b>10</b> Data generation</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="data-generation.html"><a href="data-generation.html#synthesize-data-to-match-what-is-need-to-run-a-script"><i class="fa fa-check"></i><b>10.0.1</b> Synthesize data to match what is need to run a script</a></li>
+<li class="chapter" data-level="10.0.2" data-path="data-generation.html"><a href="data-generation.html#synthesize-data-to-match-a-set-of-column-names"><i class="fa fa-check"></i><b>10.0.2</b> Synthesize data to match a set of column names</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Using LLM’s to Code</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="code-expansion-or-improvement-1" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> <a href="#improve">Code expansion or improvement</a><a href="code-expansion-or-improvement-1.html#code-expansion-or-improvement-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="optimize-code-for-speed" class="section level3 hasAnchor" number="8.0.1">
+<h3><span class="header-section-number">8.0.1</span> <a href="#optimize">Optimize code for speed</a><a href="code-expansion-or-improvement-1.html#optimize-code-for-speed" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="add-error-handling" class="section level3 hasAnchor" number="8.0.2">
+<h3><span class="header-section-number">8.0.2</span> <a href="#errorhandle">Add error handling</a><a href="code-expansion-or-improvement-1.html#add-error-handling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="convert-code-to-function" class="section level3 hasAnchor" number="8.0.3">
+<h3><span class="header-section-number">8.0.3</span> <a href="#functions">Convert code to function</a><a href="code-expansion-or-improvement-1.html#convert-code-to-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="make-code-more-modular" class="section level3 hasAnchor" number="8.0.4">
+<h3><span class="header-section-number">8.0.4</span> <a href="#modular">Make code more modular</a><a href="code-expansion-or-improvement-1.html#make-code-more-modular" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="documentation-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="translation-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
