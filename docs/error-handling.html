@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data generation | Coding Prompt Cookbook</title>
-  <meta name="description" content="Data generation | Coding Prompt Cookbook" />
+  <title>Add Error Handling | Coding Prompt Cookbook</title>
+  <meta name="description" content="Add Error Handling | Coding Prompt Cookbook" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta property="og:title" content="Add Error Handling | Coding Prompt Cookbook" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta name="twitter:title" content="Add Error Handling | Coding Prompt Cookbook" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="code-to-function.html"/>
+<link rel="prev" href="debug-error.html"/>
+<link rel="next" href="explain-chunk.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -278,21 +278,136 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="generate" class="section level1 hasAnchor">
-<h1>Data generation<a href="generate.html#generate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="error-handling" class="section level1 hasAnchor">
+<h1>Add Error Handling<a href="error-handling.html#error-handling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ingredients-4" class="section level2 hasAnchor">
+<h2>Ingredients<a href="error-handling.html#ingredients-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><a href="synthesize-data.html#synthesize-data">Synthesize data to match script requirements</a></li>
-<li><a href="column-synthesis.html#column-synthesis">Synthesize data to match column names</a></li>
+<li>Function code</li>
+<li>Input requirements</li>
+<li>Expected errors</li>
+<li>Validation rules</li>
+<li>Recovery actions</li>
+<li>Warning conditions</li>
 </ul>
+</div>
+<div id="instructions-4" class="section level2 hasAnchor">
+<h2>Instructions<a href="error-handling.html#instructions-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use this prompt template:</p>
+<pre><code>Please add error handling to this function:
 
+```r
+[paste function code here]
+```
+
+### Function requirements:
+* Input validation:
+    - [param1]: [requirements]
+    - [param2]: [requirements]
+* Error conditions:
+    - [list error cases]
+    - [expected behavior]
+* Warning conditions:
+    - [list warning cases]
+    - [expected behavior]
+
+### Error handling needs:
+* Validation type:
+    - [strict/permissive]
+    - [recovery options]
+* Message style:
+    - [technical/user-friendly]
+    - [verbosity level]
+* Special cases:
+    - [edge cases]
+    - [recovery strategies]
+
+### Context:
+* Users: [target audience]
+* Usage: [where/how used]
+* Criticality: [impact of failures]
+* Dependencies: [external factors]</code></pre>
+</div>
+<div id="tips-4" class="section level2 hasAnchor">
+<h2>Tips<a href="error-handling.html#tips-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Validate early</li>
+<li>Be specific</li>
+<li>Offer recovery</li>
+<li>Use consistent messages</li>
+<li>Consider users</li>
+<li>Document errors</li>
+<li>Test thoroughly</li>
+<li>Plan recovery</li>
+</ul>
+</div>
+<div id="serves-4" class="section level2 hasAnchor">
+<h2>Serves<a href="error-handling.html#serves-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Function development</li>
+<li>Package creation</li>
+<li>Data validation</li>
+<li>User interfaces</li>
+<li>Critical systems</li>
+<li>Production code</li>
+<li>API endpoints</li>
+</ul>
+</div>
+<div id="example-4" class="section level2 hasAnchor">
+<h2>Example<a href="error-handling.html#example-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>Please add error handling to this function:
+
+```r
+calculate_portfolio_returns &lt;- function(prices,
+                                      weights,
+                                      dates) {
+  total_return &lt;- sum(prices * weights)
+  return(total_return)
+}
+```
+
+### Function requirements:
+* Input validation:
+    - prices: numeric vector, non-negative
+    - weights: numeric vector, sum to 1
+    - dates: Date vector, ordered
+* Error conditions:
+    - Missing values
+    - Mismatched lengths
+    - Invalid data types
+    - Negative prices
+* Warning conditions:
+    - Single asset portfolio
+    - Short time period
+    - Extreme weights
+
+### Error handling needs:
+* Validation type:
+    - Strict for financial calculations
+    - No automatic corrections
+* Message style:
+    - Technical for financial users
+    - Include problematic values
+* Special cases:
+    - Zero weights
+    - Missing dates
+    - Price adjustments
+
+### Context:
+* Users: Financial analysts
+* Usage: Portfolio analytics
+* Criticality: High (financial impact)
+* Dependencies: Market data feeds</code></pre>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="code-to-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="debug-error.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="explain-chunk.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

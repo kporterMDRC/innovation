@@ -1,10 +1,5 @@
----
-title: "Translate SAS to R Recipe"
-date: "`r Sys.Date()`"
-output: html_document
----
 
-## Translate SAS to R {#sas-to-r}
+# Translate SAS to R {#sas-to-r}
 
 ## Ingredients
 

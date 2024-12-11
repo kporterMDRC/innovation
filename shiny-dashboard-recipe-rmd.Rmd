@@ -1,10 +1,5 @@
----
-title: "Build Shiny Dashboard Template Recipe"
-date: "`r Sys.Date()`"
-output: html_document
----
 
-## Build a Shiny Dashboard Template {#shiny-dashboard}
+# Build a Shiny Dashboard Template {#shiny-dashboard}
 
 ## Ingredients
 

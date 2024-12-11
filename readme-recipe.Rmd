@@ -1,10 +1,5 @@
----
-title: "Create README.md Files Recipe"
-date: "`r Sys.Date()`"
-output: html_document
----
 
-## Create README.md Files {#readme}
+# Create README.md Files {#readme}
 
 ## Ingredients
 

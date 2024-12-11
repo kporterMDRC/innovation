@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data generation | Coding Prompt Cookbook</title>
-  <meta name="description" content="Data generation | Coding Prompt Cookbook" />
+  <title>Debug Confusing Error Messages | Coding Prompt Cookbook</title>
+  <meta name="description" content="Debug Confusing Error Messages | Coding Prompt Cookbook" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta property="og:title" content="Debug Confusing Error Messages | Coding Prompt Cookbook" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta name="twitter:title" content="Debug Confusing Error Messages | Coding Prompt Cookbook" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="code-to-function.html"/>
+<link rel="prev" href="data-dictionary.html"/>
+<link rel="next" href="error-handling.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -278,21 +278,150 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="generate" class="section level1 hasAnchor">
-<h1>Data generation<a href="generate.html#generate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="debug-error" class="section level1 hasAnchor">
+<h1>Debug Confusing Error Messages<a href="debug-error.html#debug-error" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ingredients-3" class="section level2 hasAnchor">
+<h2>Ingredients<a href="debug-error.html#ingredients-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><a href="synthesize-data.html#synthesize-data">Synthesize data to match script requirements</a></li>
-<li><a href="column-synthesis.html#column-synthesis">Synthesize data to match column names</a></li>
+<li>Error message</li>
+<li>Code context</li>
+<li>Environment info</li>
+<li>Steps to reproduce</li>
+<li>Package versions</li>
+<li>Data sample</li>
 </ul>
+</div>
+<div id="instructions-3" class="section level2 hasAnchor">
+<h2>Instructions<a href="debug-error.html#instructions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use this prompt template:</p>
+<pre><code>Please help debug this error:
 
+```
+[paste full error message]
+```
+
+### Code causing error:
+```r
+[paste minimal code that produces error]
+```
+
+### Reproducible example:
+```r
+# Sample data
+[minimal data example]
+
+# Steps to reproduce
+library(package_name)
+[steps to error]
+```
+
+### Environment details:
+* R version: [version]
+* Operating System: [OS]
+* Key packages:
+    - [package1]: [version]
+    - [package2]: [version]
+
+### Additional context:
+* Goal: [what you&#39;re trying to do]
+* When error occurs: [always/sometimes]
+* What I&#39;ve tried: [debugging attempts]
+* Recent changes: [relevant updates]
+
+### Special considerations:
+* Data size: [if relevant]
+* Memory usage: [if relevant]
+* Performance: [if relevant]
+* Dependencies: [if relevant]</code></pre>
+</div>
+<div id="tips-3" class="section level2 hasAnchor">
+<h2>Tips<a href="debug-error.html#tips-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Show exact error</li>
+<li>Create minimal example</li>
+<li>Include environment</li>
+<li>Test reproduction</li>
+<li>Check versions</li>
+<li>Note patterns</li>
+<li>Document attempts</li>
+<li>Verify data</li>
+</ul>
+</div>
+<div id="serves-3" class="section level2 hasAnchor">
+<h2>Serves<a href="debug-error.html#serves-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Runtime errors</li>
+<li>Package issues</li>
+<li>Installation problems</li>
+<li>Memory errors</li>
+<li>Syntax errors</li>
+<li>Data issues</li>
+<li>Performance problems</li>
+</ul>
+</div>
+<div id="example-3" class="section level2 hasAnchor">
+<h2>Example<a href="debug-error.html#example-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>Please help debug this error:
+
+```
+Error in select():
+! Problem while computing `ratio = value/group_total`.
+Caused by error in `/`:
+! non-numeric argument to binary operator
+```
+
+### Code causing error:
+```r
+data %&gt;%
+  group_by(category) %&gt;%
+  mutate(ratio = value/sum(value))
+```
+
+### Reproducible example:
+```r
+# Sample data
+data &lt;- tibble(
+  category = c(&quot;A&quot;, &quot;B&quot;, &quot;A&quot;),
+  value = c(&quot;10&quot;, &quot;20&quot;, &quot;30&quot;)  # Note: character
+)
+
+# Steps to reproduce
+library(dplyr)
+data %&gt;%
+  group_by(category) %&gt;%
+  mutate(ratio = value/sum(value))
+```
+
+### Environment details:
+* R version: 4.2.0
+* Operating System: Windows 10
+* Key packages:
+    - dplyr: 1.1.0
+    - tidyverse: 2.0.0
+
+### Additional context:
+* Goal: Calculate ratio within groups
+* When error occurs: Consistently
+* What I&#39;ve tried: 
+    - Checked data types
+    - Printed intermediate results
+* Recent changes: Data import method
+
+### Special considerations:
+* Data size: Small example
+* Memory usage: Not applicable
+* Performance: Not applicable
+* Dependencies: Core tidyverse only</code></pre>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="code-to-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-dictionary.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="error-handling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

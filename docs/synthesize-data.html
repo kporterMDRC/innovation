@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data generation | Coding Prompt Cookbook</title>
-  <meta name="description" content="Data generation | Coding Prompt Cookbook" />
+  <title>Synthesize Data to Match Script Requirements | Coding Prompt Cookbook</title>
+  <meta name="description" content="Synthesize Data to Match Script Requirements | Coding Prompt Cookbook" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta property="og:title" content="Synthesize Data to Match Script Requirements | Coding Prompt Cookbook" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta name="twitter:title" content="Synthesize Data to Match Script Requirements | Coding Prompt Cookbook" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="code-to-function.html"/>
+<link rel="prev" href="shiny-dashboard.html"/>
+<link rel="next" href="word-to-markdown.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -278,21 +278,232 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="generate" class="section level1 hasAnchor">
-<h1>Data generation<a href="generate.html#generate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="synthesize-data" class="section level1 hasAnchor">
+<h1>Synthesize Data to Match Script Requirements<a href="synthesize-data.html#synthesize-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ingredients-12" class="section level2 hasAnchor">
+<h2>Ingredients<a href="synthesize-data.html#ingredients-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><a href="synthesize-data.html#synthesize-data">Synthesize data to match script requirements</a></li>
-<li><a href="column-synthesis.html#column-synthesis">Synthesize data to match column names</a></li>
+<li>Target script</li>
+<li>Data structure needs</li>
+<li>Variable requirements</li>
+<li>Relationships/dependencies</li>
+<li>Size requirements</li>
+<li>Distribution needs</li>
 </ul>
+</div>
+<div id="instructions-12" class="section level2 hasAnchor">
+<h2>Instructions<a href="synthesize-data.html#instructions-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use this prompt template:</p>
+<pre><code>Please help synthesize data for this script:
 
+```r
+[paste script or function here]
+```
+
+### Data requirements:
+* Structure:
+    - Format: [data.frame/matrix/list/etc]
+    - Dimensions: [rows x columns]
+* Variables needed:
+    - [var1]: [type/range/distribution]
+    - [var2]: [type/range/distribution]
+* Relationships:
+    - [correlations]
+    - [dependencies]
+    - [constraints]
+
+### Special considerations:
+* Missing data: [pattern/percentage]
+* Outliers: [presence/frequency]
+* Date ranges: [if needed]
+* Categories: [levels/distribution]
+* Seeds: [reproducibility needs]
+
+### Context:
+* Purpose: [testing/demonstration/etc]
+* Size constraints: [memory/time]
+* Special cases: [edge cases needed]
+* Output validation: [requirements]</code></pre>
+</div>
+<div id="tips-12" class="section level2 hasAnchor">
+<h2>Tips<a href="synthesize-data.html#tips-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Match exact structure</li>
+<li>Use realistic values</li>
+<li>Set random seed</li>
+<li>Include edge cases</li>
+<li>Maintain relationships</li>
+<li>Document assumptions</li>
+<li>Test with script</li>
+<li>Verify constraints</li>
+</ul>
+</div>
+<div id="serves-12" class="section level2 hasAnchor">
+<h2>Serves<a href="synthesize-data.html#serves-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Testing scripts</li>
+<li>Demonstrations</li>
+<li>Documentation</li>
+<li>Teaching</li>
+<li>Validation</li>
+<li>Debugging</li>
+<li>Examples</li>
+</ul>
+</div>
+<div id="example-12" class="section level2 hasAnchor">
+<h2>Example<a href="synthesize-data.html#example-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>Please help synthesize data for this script:
+
+```r
+analyze_customer_churn &lt;- function(customer_data) {
+  customer_data %&gt;%
+    group_by(segment) %&gt;%
+    summarize(
+      churn_rate = mean(churned),
+      avg_tenure = mean(tenure_months),
+      avg_spending = mean(monthly_spend),
+      n_customers = n()
+    ) %&gt;%
+    arrange(desc(churn_rate))
+}
+```
+
+### Data requirements:
+* Structure:
+    - Format: data.frame/tibble
+    - Dimensions: ~1000 rows x 5+ columns
+* Variables needed:
+    - customer_id: unique identifier
+    - segment: categorical (3-4 levels)
+    - churned: logical
+    - tenure_months: numeric (0-60)
+    - monthly_spend: numeric (positive)
+* Relationships:
+    - Higher spend → Lower churn
+    - Higher tenure → Lower churn
+    - Segment affects churn rate
+
+### Special considerations:
+* Missing data: None allowed
+* Outliers: Few high spenders
+* Categories: 
+    - Segments: &quot;Basic&quot;, &quot;Plus&quot;, &quot;Premium&quot;
+    - Balanced sizes
+* Seeds: Set for reproducibility
+
+### Context:
+* Purpose: Function testing
+* Size: Small demonstration
+* Special cases: Include all segments
+* Validation: Reasonable churn rates</code></pre>
+</div>
+<div id="synthesis-patterns" class="section level2 hasAnchor">
+<h2>Synthesis Patterns<a href="synthesize-data.html#synthesis-patterns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="basic-structures" class="section level3 hasAnchor">
+<h3>1. Basic Structures<a href="synthesize-data.html#basic-structures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Numeric Data</strong></li>
+</ol>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="synthesize-data.html#cb56-1" tabindex="-1"></a><span class="co"># Normal distribution</span></span>
+<span id="cb56-2"><a href="synthesize-data.html#cb56-2" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb56-3"><a href="synthesize-data.html#cb56-3" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="synthesize-data.html#cb56-4" tabindex="-1"></a><span class="co"># Uniform distribution</span></span>
+<span id="cb56-5"><a href="synthesize-data.html#cb56-5" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>)</span>
+<span id="cb56-6"><a href="synthesize-data.html#cb56-6" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="synthesize-data.html#cb56-7" tabindex="-1"></a><span class="co"># Integer range</span></span>
+<span id="cb56-8"><a href="synthesize-data.html#cb56-8" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Categorical Data</strong></li>
+</ol>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="synthesize-data.html#cb57-1" tabindex="-1"></a><span class="co"># Factor with proportions</span></span>
+<span id="cb57-2"><a href="synthesize-data.html#cb57-2" tabindex="-1"></a>categories <span class="ot">&lt;-</span> <span class="fu">sample</span>(</span>
+<span id="cb57-3"><a href="synthesize-data.html#cb57-3" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>),</span>
+<span id="cb57-4"><a href="synthesize-data.html#cb57-4" tabindex="-1"></a>  n,</span>
+<span id="cb57-5"><a href="synthesize-data.html#cb57-5" tabindex="-1"></a>  <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb57-6"><a href="synthesize-data.html#cb57-6" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>)</span>
+<span id="cb57-7"><a href="synthesize-data.html#cb57-7" tabindex="-1"></a>)</span>
+<span id="cb57-8"><a href="synthesize-data.html#cb57-8" tabindex="-1"></a></span>
+<span id="cb57-9"><a href="synthesize-data.html#cb57-9" tabindex="-1"></a><span class="co"># Ordered categories</span></span>
+<span id="cb57-10"><a href="synthesize-data.html#cb57-10" tabindex="-1"></a>ordered_cats <span class="ot">&lt;-</span> <span class="fu">factor</span>(</span>
+<span id="cb57-11"><a href="synthesize-data.html#cb57-11" tabindex="-1"></a>  categories,</span>
+<span id="cb57-12"><a href="synthesize-data.html#cb57-12" tabindex="-1"></a>  <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>),</span>
+<span id="cb57-13"><a href="synthesize-data.html#cb57-13" tabindex="-1"></a>  <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb57-14"><a href="synthesize-data.html#cb57-14" tabindex="-1"></a>)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Dates/Times</strong></li>
+</ol>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="synthesize-data.html#cb58-1" tabindex="-1"></a><span class="co"># Date sequence</span></span>
+<span id="cb58-2"><a href="synthesize-data.html#cb58-2" tabindex="-1"></a>dates <span class="ot">&lt;-</span> <span class="fu">seq</span>(</span>
+<span id="cb58-3"><a href="synthesize-data.html#cb58-3" tabindex="-1"></a>  <span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-01-01&quot;</span>),</span>
+<span id="cb58-4"><a href="synthesize-data.html#cb58-4" tabindex="-1"></a>  <span class="at">by =</span> <span class="st">&quot;day&quot;</span>,</span>
+<span id="cb58-5"><a href="synthesize-data.html#cb58-5" tabindex="-1"></a>  <span class="at">length.out =</span> n</span>
+<span id="cb58-6"><a href="synthesize-data.html#cb58-6" tabindex="-1"></a>)</span>
+<span id="cb58-7"><a href="synthesize-data.html#cb58-7" tabindex="-1"></a></span>
+<span id="cb58-8"><a href="synthesize-data.html#cb58-8" tabindex="-1"></a><span class="co"># Random dates</span></span>
+<span id="cb58-9"><a href="synthesize-data.html#cb58-9" tabindex="-1"></a>random_dates <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(</span>
+<span id="cb58-10"><a href="synthesize-data.html#cb58-10" tabindex="-1"></a>  <span class="fu">sample</span>(</span>
+<span id="cb58-11"><a href="synthesize-data.html#cb58-11" tabindex="-1"></a>    <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2023-01-01&quot;</span>), <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>), <span class="at">by =</span> <span class="st">&quot;day&quot;</span>),</span>
+<span id="cb58-12"><a href="synthesize-data.html#cb58-12" tabindex="-1"></a>    n,</span>
+<span id="cb58-13"><a href="synthesize-data.html#cb58-13" tabindex="-1"></a>    <span class="at">replace =</span> <span class="cn">TRUE</span></span>
+<span id="cb58-14"><a href="synthesize-data.html#cb58-14" tabindex="-1"></a>  )</span>
+<span id="cb58-15"><a href="synthesize-data.html#cb58-15" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="adding-relationships" class="section level3 hasAnchor">
+<h3>2. Adding Relationships<a href="synthesize-data.html#adding-relationships" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Correlated Variables</strong></li>
+</ol>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="synthesize-data.html#cb59-1" tabindex="-1"></a><span class="co"># Positive correlation</span></span>
+<span id="cb59-2"><a href="synthesize-data.html#cb59-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)</span>
+<span id="cb59-3"><a href="synthesize-data.html#cb59-3" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.7</span><span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb59-4"><a href="synthesize-data.html#cb59-4" tabindex="-1"></a></span>
+<span id="cb59-5"><a href="synthesize-data.html#cb59-5" tabindex="-1"></a><span class="co"># Dependent categories</span></span>
+<span id="cb59-6"><a href="synthesize-data.html#cb59-6" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;High&quot;</span>, <span class="st">&quot;Low&quot;</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Logical Dependencies</strong></li>
+</ol>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="synthesize-data.html#cb60-1" tabindex="-1"></a><span class="co"># Conditional values</span></span>
+<span id="cb60-2"><a href="synthesize-data.html#cb60-2" tabindex="-1"></a>value2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(value1 <span class="sc">&gt;</span> <span class="fu">median</span>(value1),</span>
+<span id="cb60-3"><a href="synthesize-data.html#cb60-3" tabindex="-1"></a>                 <span class="fu">runif</span>(n, <span class="dv">10</span>, <span class="dv">20</span>),</span>
+<span id="cb60-4"><a href="synthesize-data.html#cb60-4" tabindex="-1"></a>                 <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>))</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Complex Relationships</strong></li>
+</ol>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="synthesize-data.html#cb61-1" tabindex="-1"></a><span class="co"># Multiple factors</span></span>
+<span id="cb61-2"><a href="synthesize-data.html#cb61-2" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fl">0.3</span> <span class="sc">*</span> age <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> income <span class="sc">+</span></span>
+<span id="cb61-3"><a href="synthesize-data.html#cb61-3" tabindex="-1"></a>         <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="dv">2</span>)</span></code></pre></div>
+</div>
+<div id="special-cases-1" class="section level3 hasAnchor">
+<h3>3. Special Cases<a href="synthesize-data.html#special-cases-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Missing Values</strong></li>
+</ol>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="synthesize-data.html#cb62-1" tabindex="-1"></a><span class="co"># Random NAs</span></span>
+<span id="cb62-2"><a href="synthesize-data.html#cb62-2" tabindex="-1"></a>values[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n, n <span class="sc">*</span> <span class="fl">0.1</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb62-3"><a href="synthesize-data.html#cb62-3" tabindex="-1"></a></span>
+<span id="cb62-4"><a href="synthesize-data.html#cb62-4" tabindex="-1"></a><span class="co"># Conditional NAs</span></span>
+<span id="cb62-5"><a href="synthesize-data.html#cb62-5" tabindex="-1"></a>values[values <span class="sc">&gt;</span> <span class="fu">quantile</span>(values, <span class="fl">0.9</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Outliers</strong></li>
+</ol>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="synthesize-data.html#cb63-1" tabindex="-1"></a><span class="co"># Add outliers</span></span>
+<span id="cb63-2"><a href="synthesize-data.html#cb63-2" tabindex="-1"></a>values[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n, n <span class="sc">*</span> <span class="fl">0.05</span>)] <span class="ot">&lt;-</span> values <span class="sc">*</span> <span class="dv">5</span></span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Edge Cases</strong></li>
+</ol>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="synthesize-data.html#cb64-1" tabindex="-1"></a><span class="co"># Special values</span></span>
+<span id="cb64-2"><a href="synthesize-data.html#cb64-2" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">c</span>(values, <span class="cn">Inf</span>, <span class="sc">-</span><span class="cn">Inf</span>, <span class="dv">0</span>, <span class="cn">NA</span>)</span></code></pre></div>
+
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="code-to-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="shiny-dashboard.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="word-to-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,10 +1,5 @@
----
-title: "Translate Word to Markdown Recipe"
-date: "`r Sys.Date()`"
-output: html_document
----
 
-## Translate Word to Markdown {#column-synthesis}
+# Translate Word to Markdown {#word-to-markdown}
 
 ## Ingredients
 

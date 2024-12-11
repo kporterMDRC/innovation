@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data generation | Coding Prompt Cookbook</title>
-  <meta name="description" content="Data generation | Coding Prompt Cookbook" />
+  <title>Translate Word to Markdown | Coding Prompt Cookbook</title>
+  <meta name="description" content="Translate Word to Markdown | Coding Prompt Cookbook" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta property="og:title" content="Translate Word to Markdown | Coding Prompt Cookbook" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta name="twitter:title" content="Translate Word to Markdown | Coding Prompt Cookbook" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="code-to-function.html"/>
+<link rel="prev" href="synthesize-data.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -278,21 +278,141 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="generate" class="section level1 hasAnchor">
-<h1>Data generation<a href="generate.html#generate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="word-to-markdown" class="section level1 hasAnchor">
+<h1>Translate Word to Markdown<a href="word-to-markdown.html#word-to-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ingredients-13" class="section level2 hasAnchor">
+<h2>Ingredients<a href="word-to-markdown.html#ingredients-13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><a href="synthesize-data.html#synthesize-data">Synthesize data to match script requirements</a></li>
-<li><a href="column-synthesis.html#column-synthesis">Synthesize data to match column names</a></li>
+<li>Word document content</li>
+<li>Formatting requirements</li>
+<li>Structure needs</li>
+<li>Special elements</li>
+<li>Output format</li>
+<li>Style guidelines</li>
 </ul>
+</div>
+<div id="instructions-13" class="section level2 hasAnchor">
+<h2>Instructions<a href="word-to-markdown.html#instructions-13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use this prompt template:</p>
+<pre><code>Please translate this Word content to Markdown:
 
+[paste Word content here]
+
+### Translation needs:
+* Output format:
+    - [basic/github/hugo/etc]
+    - [special formatting]
+* Element handling:
+    - Tables: [simple/complex]
+    - Images: [local/web/none]
+    - Lists: [nested/simple]
+    - Code blocks: [yes/no]
+
+### Document features:
+* Structure elements:
+    - [headings/levels]
+    - [lists/types]
+    - [tables/formats]
+    - [special elements]
+* Formatting:
+    - [bold/italic]
+    - [highlighting]
+    - [special characters]
+* Special content:
+    - [equations]
+    - [footnotes]
+    - [citations]
+    - [links]
+
+### Additional requirements:
+* Image handling: [approach]
+* Table alignment: [needs]
+* Link style: [preferences]
+* Spacing: [requirements]</code></pre>
+</div>
+<div id="tips-13" class="section level2 hasAnchor">
+<h2>Tips<a href="word-to-markdown.html#tips-13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Preserve hierarchy</li>
+<li>Match formatting</li>
+<li>Handle images</li>
+<li>Check tables</li>
+<li>Verify lists</li>
+<li>Keep links</li>
+<li>Test rendering</li>
+<li>Review spacing</li>
+</ul>
+</div>
+<div id="serves-13" class="section level2 hasAnchor">
+<h2>Serves<a href="word-to-markdown.html#serves-13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Documentation</li>
+<li>Websites</li>
+<li>Reports</li>
+<li>Blogs</li>
+<li>Wikis</li>
+<li>Tutorials</li>
+<li>READMEs</li>
+</ul>
+</div>
+<div id="example-13" class="section level2 hasAnchor">
+<h2>Example<a href="word-to-markdown.html#example-13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>Please translate this Word content to Markdown:
+
+[Word content shows]
+Course Syllabus: Data Analysis
+    1. Introduction
+        a. Course Overview
+        b. Prerequisites
+    2. Methods
+        a. Statistical Approaches
+        b. Software Tools
+
+Table 1: Course Schedule
+Week | Topic | Assignment
+1 | Intro | Reading
+2 | Methods | Project
+
+*Important deadlines in italics*
+**Key concepts in bold**
+[Course website](http://example.com)
+
+### Translation needs:
+* Output format: 
+    - GitHub Markdown
+    - Code highlighting
+* Element handling:
+    - Tables: Simple
+    - Lists: Nested
+    - Code: Yes
+
+### Document features:
+* Structure elements:
+    - 2 heading levels
+    - Numbered lists
+    - Simple table
+* Formatting:
+    - Bold/italic text
+    - Hyperlinks
+    - Code blocks
+* Special content:
+    - Code snippets
+    - External links
+
+### Additional requirements:
+* Table alignment: Left
+* Link style: Inline
+* Spacing: Double</code></pre>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="code-to-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="synthesize-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

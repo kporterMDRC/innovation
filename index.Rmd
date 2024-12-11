@@ -1,15 +1,13 @@
 ---
-title: "Using LLM's to Code"
-author: "Your Name"
-date: "2024-12-06"
+title: "Coding Prompt Cookbook"
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
     number_sections: false
+    toc_depth: 2
 ---
 
-
-# Coding Cookbook {.unnumbered}
+# Recipes {.unnumbered}
 
 ## Starters {#starters}
 - [Make an R notebook or R Bookdown site from a text outline](#outline-to-r-doc)
@@ -42,6 +40,6 @@ output:
 - [Translate SAS to R](#sas-to-r)
 - [Translate Word to markdown](#word-to-markdown)
 
-## Data generation {#generate}
+# Data generation {#generate}
 - [Synthesize data to match script requirements](#synthesize-data)
 - [Synthesize data to match column names](#column-synthesis)

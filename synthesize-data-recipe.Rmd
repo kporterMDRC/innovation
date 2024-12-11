@@ -1,10 +1,5 @@
----
-title: "Synthesize Data Recipe"
-date: "`r Sys.Date()`"
-output: html_document
----
 
-## Synthesize Data to Match Script Requirements {#synthesize-data}
+# Synthesize Data to Match Script Requirements {#synthesize-data}
 
 ## Ingredients
 

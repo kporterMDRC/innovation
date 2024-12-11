@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data generation | Coding Prompt Cookbook</title>
-  <meta name="description" content="Data generation | Coding Prompt Cookbook" />
+  <title>Synthesize Data to Match Column Names | Coding Prompt Cookbook</title>
+  <meta name="description" content="Synthesize Data to Match Column Names | Coding Prompt Cookbook" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta property="og:title" content="Synthesize Data to Match Column Names | Coding Prompt Cookbook" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta name="twitter:title" content="Synthesize Data to Match Column Names | Coding Prompt Cookbook" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="code-to-function.html"/>
+<link rel="prev" href="code-to-function.html"/>
+<link rel="next" href="data-dictionary.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -278,21 +278,226 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="generate" class="section level1 hasAnchor">
-<h1>Data generation<a href="generate.html#generate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="column-synthesis" class="section level1 hasAnchor">
+<h1>Synthesize Data to Match Column Names<a href="column-synthesis.html#column-synthesis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ingredients-1" class="section level2 hasAnchor">
+<h2>Ingredients<a href="column-synthesis.html#ingredients-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><a href="synthesize-data.html#synthesize-data">Synthesize data to match script requirements</a></li>
-<li><a href="column-synthesis.html#column-synthesis">Synthesize data to match column names</a></li>
+<li>Column names list</li>
+<li>Expected data types</li>
+<li>Size requirements</li>
+<li>Value constraints</li>
+<li>Naming patterns</li>
+<li>Common prefixes/suffixes</li>
 </ul>
+</div>
+<div id="instructions-1" class="section level2 hasAnchor">
+<h2>Instructions<a href="column-synthesis.html#instructions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use this prompt template:</p>
+<pre><code>Please help synthesize data for these columns:
 
+```r
+columns &lt;- c(
+  [paste column names here]
+)
+```
+
+### Data requirements:
+* Size: [number of rows needed]
+* Format: [data.frame/tibble/etc]
+* General rules:
+    - Missing values: [allowed/not allowed]
+    - Unique constraints: [if any]
+    - Date format: [if needed]
+    
+### Column name patterns:
+* ID columns: [patterns]
+* Date columns: [patterns]
+* Numeric columns: [patterns]
+* Category columns: [patterns]
+* Flag columns: [patterns]
+
+### Value guidelines:
+* Ranges: [min/max if known]
+* Distributions: [if specific needed]
+* Categories: [known values]
+* Dependencies: [between columns]
+* Special cases: [if any]</code></pre>
+</div>
+<div id="tips-1" class="section level2 hasAnchor">
+<h2>Tips<a href="column-synthesis.html#tips-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Look for naming patterns</li>
+<li>Check common prefixes</li>
+<li>Consider suffixes</li>
+<li>Note ID columns</li>
+<li>Identify dates</li>
+<li>Check for flags</li>
+<li>Find categories</li>
+<li>Note measurements</li>
+</ul>
+</div>
+<div id="serves-1" class="section level2 hasAnchor">
+<h2>Serves<a href="column-synthesis.html#serves-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Test data creation</li>
+<li>Mock datasets</li>
+<li>Documentation</li>
+<li>Examples</li>
+<li>Prototypes</li>
+<li>Training data</li>
+<li>Demonstrations</li>
+</ul>
+</div>
+<div id="example-1" class="section level2 hasAnchor">
+<h2>Example<a href="column-synthesis.html#example-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>Please help synthesize data for these columns:
+
+```r
+columns &lt;- c(
+  &quot;customer_id&quot;,
+  &quot;signup_date&quot;,
+  &quot;plan_type&quot;,
+  &quot;monthly_fee&quot;,
+  &quot;is_active&quot;,
+  &quot;last_payment_date&quot;,
+  &quot;total_downloads&quot;,
+  &quot;avg_daily_usage_hrs&quot;,
+  &quot;referral_source&quot;
+)
+```
+
+### Data requirements:
+* Size: 100 rows
+* Format: tibble
+* General rules:
+    - No missing values
+    - customer_id must be unique
+    - Dates between 2020-2024
+    
+### Column name patterns:
+* ID columns: ends in &#39;_id&#39;
+* Date columns: contains &#39;_date&#39;
+* Numeric columns: starts with &#39;total_&#39;, &#39;avg_&#39;
+* Category columns: contains &#39;_type&#39;, &#39;_source&#39;
+* Flag columns: starts with &#39;is_&#39;
+
+### Value guidelines:
+* Ranges:
+    - monthly_fee: $5-50
+    - total_downloads: 0-1000
+    - avg_daily_usage: 0-24
+* Categories:
+    - plan_type: &quot;basic&quot;, &quot;premium&quot;, &quot;enterprise&quot;
+    - referral_source: &quot;web&quot;, &quot;app&quot;, &quot;friend&quot;, &quot;ad&quot;
+* Dependencies:
+    - last_payment_date &gt; signup_date
+    - monthly_fee depends on plan_type
+* Special cases:
+    - Include some inactive customers</code></pre>
+</div>
+<div id="pattern-recognition-guide" class="section level2 hasAnchor">
+<h2>Pattern Recognition Guide<a href="column-synthesis.html#pattern-recognition-guide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="common-column-types" class="section level3 hasAnchor">
+<h3>1. Common Column Types<a href="column-synthesis.html#common-column-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Identifiers</strong></li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="column-synthesis.html#cb5-1" tabindex="-1"></a><span class="co"># Patterns: _id, id_, number</span></span>
+<span id="cb5-2"><a href="column-synthesis.html#cb5-2" tabindex="-1"></a>id_patterns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;_id$&quot;</span>, <span class="st">&quot;^id&quot;</span>, <span class="st">&quot;_num$&quot;</span>, <span class="st">&quot;_number$&quot;</span>)</span>
+<span id="cb5-3"><a href="column-synthesis.html#cb5-3" tabindex="-1"></a><span class="co"># Generation:</span></span>
+<span id="cb5-4"><a href="column-synthesis.html#cb5-4" tabindex="-1"></a>ids <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;CUST%05d&quot;</span>, <span class="dv">1</span><span class="sc">:</span>n)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Dates</strong></li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="column-synthesis.html#cb6-1" tabindex="-1"></a><span class="co"># Patterns: _date, _dt, _time</span></span>
+<span id="cb6-2"><a href="column-synthesis.html#cb6-2" tabindex="-1"></a>date_patterns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;_date$&quot;</span>, <span class="st">&quot;_dt$&quot;</span>, <span class="st">&quot;^date&quot;</span>, <span class="st">&quot;_time$&quot;</span>)</span>
+<span id="cb6-3"><a href="column-synthesis.html#cb6-3" tabindex="-1"></a><span class="co"># Generation:</span></span>
+<span id="cb6-4"><a href="column-synthesis.html#cb6-4" tabindex="-1"></a>dates <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2020-01-01&quot;</span>), <span class="at">by =</span> <span class="st">&quot;day&quot;</span>, <span class="at">length.out =</span> n)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Categories</strong></li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="column-synthesis.html#cb7-1" tabindex="-1"></a><span class="co"># Patterns: _type, _category, _class, _group</span></span>
+<span id="cb7-2"><a href="column-synthesis.html#cb7-2" tabindex="-1"></a>cat_patterns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;_type$&quot;</span>, <span class="st">&quot;_category$&quot;</span>, <span class="st">&quot;_source$&quot;</span>, <span class="st">&quot;_group$&quot;</span>)</span>
+<span id="cb7-3"><a href="column-synthesis.html#cb7-3" tabindex="-1"></a><span class="co"># Generation:</span></span>
+<span id="cb7-4"><a href="column-synthesis.html#cb7-4" tabindex="-1"></a>categories <span class="ot">&lt;-</span> <span class="fu">sample</span>(levels, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="value-generation" class="section level3 hasAnchor">
+<h3>2. Value Generation<a href="column-synthesis.html#value-generation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Numeric Values</strong></li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="column-synthesis.html#cb8-1" tabindex="-1"></a><span class="co"># Amounts</span></span>
+<span id="cb8-2"><a href="column-synthesis.html#cb8-2" tabindex="-1"></a>amounts <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">runif</span>(n, min, max), <span class="dv">2</span>)</span>
+<span id="cb8-3"><a href="column-synthesis.html#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="column-synthesis.html#cb8-4" tabindex="-1"></a><span class="co"># Counts</span></span>
+<span id="cb8-5"><a href="column-synthesis.html#cb8-5" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">rpois</span>(n, <span class="at">lambda =</span> <span class="dv">10</span>)</span>
+<span id="cb8-6"><a href="column-synthesis.html#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="column-synthesis.html#cb8-7" tabindex="-1"></a><span class="co"># Percentages</span></span>
+<span id="cb8-8"><a href="column-synthesis.html#cb8-8" tabindex="-1"></a>percentages <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">100</span>), <span class="dv">1</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Categorical Values</strong></li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="column-synthesis.html#cb9-1" tabindex="-1"></a><span class="co"># Simple categories</span></span>
+<span id="cb9-2"><a href="column-synthesis.html#cb9-2" tabindex="-1"></a>status <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;active&quot;</span>, <span class="st">&quot;inactive&quot;</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-3"><a href="column-synthesis.html#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="column-synthesis.html#cb9-4" tabindex="-1"></a><span class="co"># Weighted categories</span></span>
+<span id="cb9-5"><a href="column-synthesis.html#cb9-5" tabindex="-1"></a>types <span class="ot">&lt;-</span> <span class="fu">sample</span>(</span>
+<span id="cb9-6"><a href="column-synthesis.html#cb9-6" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;basic&quot;</span>, <span class="st">&quot;premium&quot;</span>, <span class="st">&quot;enterprise&quot;</span>),</span>
+<span id="cb9-7"><a href="column-synthesis.html#cb9-7" tabindex="-1"></a>  n,</span>
+<span id="cb9-8"><a href="column-synthesis.html#cb9-8" tabindex="-1"></a>  <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-9"><a href="column-synthesis.html#cb9-9" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.6</span>, <span class="fl">0.3</span>, <span class="fl">0.1</span>)</span>
+<span id="cb9-10"><a href="column-synthesis.html#cb9-10" tabindex="-1"></a>)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Flags/Indicators</strong></li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="column-synthesis.html#cb10-1" tabindex="-1"></a><span class="co"># Boolean</span></span>
+<span id="cb10-2"><a href="column-synthesis.html#cb10-2" tabindex="-1"></a>is_active <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-3"><a href="column-synthesis.html#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="column-synthesis.html#cb10-4" tabindex="-1"></a><span class="co"># Y/N</span></span>
+<span id="cb10-5"><a href="column-synthesis.html#cb10-5" tabindex="-1"></a>yn_flag <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Y&quot;</span>, <span class="st">&quot;N&quot;</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="special-cases" class="section level3 hasAnchor">
+<h3>3. Special Cases<a href="column-synthesis.html#special-cases" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Dependent Values</strong></li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="column-synthesis.html#cb11-1" tabindex="-1"></a><span class="co"># Value based on category</span></span>
+<span id="cb11-2"><a href="column-synthesis.html#cb11-2" tabindex="-1"></a>price <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(type <span class="sc">==</span> <span class="st">&quot;premium&quot;</span>,</span>
+<span id="cb11-3"><a href="column-synthesis.html#cb11-3" tabindex="-1"></a>                <span class="fu">runif</span>(n, <span class="dv">50</span>, <span class="dv">100</span>),</span>
+<span id="cb11-4"><a href="column-synthesis.html#cb11-4" tabindex="-1"></a>                <span class="fu">runif</span>(n, <span class="dv">10</span>, <span class="dv">49</span>))</span>
+<span id="cb11-5"><a href="column-synthesis.html#cb11-5" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="column-synthesis.html#cb11-6" tabindex="-1"></a><span class="co"># Sequential dates</span></span>
+<span id="cb11-7"><a href="column-synthesis.html#cb11-7" tabindex="-1"></a>end_date <span class="ot">&lt;-</span> start_date <span class="sc">+</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">365</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Unique Constraints</strong></li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="column-synthesis.html#cb12-1" tabindex="-1"></a><span class="co"># Unique identifiers</span></span>
+<span id="cb12-2"><a href="column-synthesis.html#cb12-2" tabindex="-1"></a>unique_ids <span class="ot">&lt;-</span> <span class="fu">make.unique</span>(<span class="fu">as.character</span>(ids))</span>
+<span id="cb12-3"><a href="column-synthesis.html#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="column-synthesis.html#cb12-4" tabindex="-1"></a><span class="co"># Unique combinations</span></span>
+<span id="cb12-5"><a href="column-synthesis.html#cb12-5" tabindex="-1"></a>unique_pairs <span class="ot">&lt;-</span> <span class="fu">unique</span>(</span>
+<span id="cb12-6"><a href="column-synthesis.html#cb12-6" tabindex="-1"></a>  <span class="fu">expand.grid</span>(<span class="at">factor1 =</span> levels1, <span class="at">factor2 =</span> levels2)</span>
+<span id="cb12-7"><a href="column-synthesis.html#cb12-7" tabindex="-1"></a>)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Missing Values</strong></li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="column-synthesis.html#cb13-1" tabindex="-1"></a><span class="co"># Random NAs</span></span>
+<span id="cb13-2"><a href="column-synthesis.html#cb13-2" tabindex="-1"></a>values[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n, n <span class="sc">*</span> <span class="fl">0.1</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb13-3"><a href="column-synthesis.html#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="column-synthesis.html#cb13-4" tabindex="-1"></a><span class="co"># Conditional NAs</span></span>
+<span id="cb13-5"><a href="column-synthesis.html#cb13-5" tabindex="-1"></a>values[values <span class="sc">&gt;</span> threshold] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
+
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="code-to-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="code-to-function.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-dictionary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

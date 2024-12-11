@@ -1,12 +1,12 @@
 bookdown::gitbook:
   css: style.css
-  config:
-    toc:
-      before: |
-        <li><a href="./">Using LLM's to Code</a></li>
-        
+  # toc_depth: 2
+  # config:
+  #   toc:
+
 rmd_files:
   - index.Rmd
+  
   # Starters
   - outline-to-r-doc-recipe.Rmd
   - shiny-dashboard-recipe-rmd.Rmd

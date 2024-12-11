@@ -1,10 +1,5 @@
----
-title: "Add Error Handling Recipe"
-date: "`r Sys.Date()`"
-output: html_document
----
 
-## Add Error Handling {#error-handling}
+# Add Error Handling {#error-handling}
 
 ## Ingredients
 

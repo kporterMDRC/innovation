@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data generation | Coding Prompt Cookbook</title>
-  <meta name="description" content="Data generation | Coding Prompt Cookbook" />
+  <title>Generate Roxygen2 Documentation | Coding Prompt Cookbook</title>
+  <meta name="description" content="Generate Roxygen2 Documentation | Coding Prompt Cookbook" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta property="og:title" content="Generate Roxygen2 Documentation | Coding Prompt Cookbook" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta name="twitter:title" content="Generate Roxygen2 Documentation | Coding Prompt Cookbook" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="code-to-function.html"/>
+<link rel="prev" href="readme.html"/>
+<link rel="next" href="sas-to-r.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -278,21 +278,205 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="generate" class="section level1 hasAnchor">
-<h1>Data generation<a href="generate.html#generate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="roxygen2-doc" class="section level1 hasAnchor">
+<h1>Generate Roxygen2 Documentation<a href="roxygen2-doc.html#roxygen2-doc" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ingredients-9" class="section level2 hasAnchor">
+<h2>Ingredients<a href="roxygen2-doc.html#ingredients-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><a href="synthesize-data.html#synthesize-data">Synthesize data to match script requirements</a></li>
-<li><a href="column-synthesis.html#column-synthesis">Synthesize data to match column names</a></li>
+<li>Function code</li>
+<li>Function purpose</li>
+<li>Parameter descriptions</li>
+<li>Return value details</li>
+<li>Examples of usage</li>
+<li>Dependencies information</li>
+</ul>
+</div>
+<div id="instructions-9" class="section level2 hasAnchor">
+<h2>Instructions<a href="roxygen2-doc.html#instructions-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use this prompt template:</p>
+<pre><code>Please generate roxygen2 documentation for this function:
+
+```r
+[paste function code here]
+```
+
+### Documentation needs:
+* Title style: [brief/descriptive/technical]
+* Description detail level: [basic/intermediate/comprehensive]
+* Example complexity: [basic/intermediate/advanced]
+* Include sections:
+    * [list needed sections like @details, @seealso, etc.]
+
+### Function context:
+* Package: [package name]
+* Dependencies: [required packages]
+* Related functions: [list related functions]
+* Intended users: [target audience]
+
+### Special requirements:
+* Export status: [exported/internal]
+* S3/S4 methods: [if applicable]
+* Inheritance: [if applicable]
+* Deprecation: [if applicable]</code></pre>
+</div>
+<div id="tips-9" class="section level2 hasAnchor">
+<h2>Tips<a href="roxygen2-doc.html#tips-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Use consistent parameter naming</li>
+<li>Include representative examples</li>
+<li>Document return value structure</li>
+<li>Note side effects</li>
+<li>Reference related functions</li>
+<li>Include edge cases</li>
+<li>Specify data requirements</li>
+<li>Add package links when relevant</li>
+</ul>
+</div>
+<div id="serves-9" class="section level2 hasAnchor">
+<h2>Serves<a href="roxygen2-doc.html#serves-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Function documentation</li>
+<li>Method documentation</li>
+<li>Package data documentation</li>
+<li>Class documentation</li>
+<li>Package-level documentation</li>
+<li>Dataset documentation</li>
+<li>Re-export documentation</li>
+</ul>
+</div>
+<div id="example-9" class="section level2 hasAnchor">
+<h2>Example<a href="roxygen2-doc.html#example-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>Please generate roxygen2 documentation for this function:
+
+```r
+calculate_portfolio_stats &lt;- function(returns, 
+                                    weights = NULL,
+                                    rebalance_freq = &quot;monthly&quot;,
+                                    risk_free = 0) {
+  
+  # Validate inputs
+  if (!is.numeric(returns)) stop(&quot;returns must be numeric&quot;)
+  if (!is.null(weights) &amp;&amp; length(weights) != ncol(returns)) {
+    stop(&quot;weights length must match number of assets&quot;)
+  }
+  
+  # Set equal weights if none provided
+  if (is.null(weights)) {
+    weights &lt;- rep(1/ncol(returns), ncol(returns))
+  }
+  
+  # Calculate portfolio returns
+  port_returns &lt;- calculate_weighted_returns(returns, weights, rebalance_freq)
+  
+  # Calculate statistics
+  stats &lt;- list(
+    mean_return = mean(port_returns),
+    volatility = sd(port_returns) * sqrt(252),
+    sharpe = (mean(port_returns) - risk_free) / 
+             (sd(port_returns) * sqrt(252)),
+    max_drawdown = calculate_max_drawdown(port_returns)
+  )
+  
+  return(stats)
+}
+```
+
+### Documentation needs:
+* Title style: technical
+* Description detail level: comprehensive
+* Example complexity: intermediate
+* Include sections:
+    * @details
+    * @seealso
+    * @references
+    * @note
+
+### Function context:
+* Package: portfolioAnalytics
+* Dependencies: 
+    * stats
+    * xts
+* Related functions:
+    * calculate_weighted_returns()
+    * calculate_max_drawdown()
+* Intended users: Finance professionals
+
+### Special requirements:
+* Export status: exported
+* S3 methods: supports matrix/xts/data.frame inputs
+* Inheritance: none
+* Deprecation: none</code></pre>
+</div>
+<div id="additional-tips-for-roxygen2" class="section level2 hasAnchor">
+<h2>Additional Tips for roxygen2<a href="roxygen2-doc.html#additional-tips-for-roxygen2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="common-tags" class="section level3 hasAnchor">
+<h3>Common Tags<a href="roxygen2-doc.html#common-tags" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><code>@param</code> - Parameter description</li>
+<li><code>@return</code> - Return value</li>
+<li><code>@export</code> - Make function public</li>
+<li><code>@keywords</code> - Function categories</li>
+<li><code>@family</code> - Related functions</li>
+<li><code>@inheritParams</code> - Inherit parameter docs</li>
+<li><code>@section</code> - Custom sections</li>
+</ul>
+</div>
+<div id="formatting-guidelines" class="section level3 hasAnchor">
+<h3>Formatting Guidelines<a href="roxygen2-doc.html#formatting-guidelines" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Use sentence case for titles</li>
+<li>End sentences with periods</li>
+<li>Use backticks for code</li>
+<li>Use <code>\code{}</code> for R expressions</li>
+<li>Use <code>\link{}</code> for function references</li>
+<li>Indent examples for readability</li>
+</ul>
+</div>
+<div id="best-practices" class="section level3 hasAnchor">
+<h3>Best Practices<a href="roxygen2-doc.html#best-practices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Document all parameters</li>
+<li>Include units/ranges</li>
+<li>Note default values</li>
+<li>Explain return structure</li>
+<li>Show error conditions</li>
+<li>Give worked examples</li>
+<li>Cross-reference methods</li>
+</ul>
+</div>
+<div id="common-patterns" class="section level3 hasAnchor">
+<h3>Common Patterns<a href="roxygen2-doc.html#common-patterns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>For S3 methods:
+<ul>
+<li><code>@method class generic</code></li>
+</ul></li>
+<li>For datasets:
+<ul>
+<li><code>@format</code></li>
+<li><code>@source</code></li>
+</ul></li>
+<li>For packages:
+<ul>
+<li><code>@docType package</code></li>
+<li><code>@name package-name</code></li>
+</ul></li>
+<li>For deprecated functions:
+<ul>
+<li><code>@deprecated</code></li>
+</ul></li>
 </ul>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="code-to-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="readme.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sas-to-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

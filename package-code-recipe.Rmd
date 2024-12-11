@@ -1,10 +1,5 @@
----
-title: "Generate Code Using Package Recipe"
-date: "`r Sys.Date()`"
-output: html_document
----
 
-## Generate Code Using a Specific Package {#package-code}
+# Generate Code Using a Specific Package {#package-code}
 
 ## Ingredients
 

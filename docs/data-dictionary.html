@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data generation | Coding Prompt Cookbook</title>
-  <meta name="description" content="Data generation | Coding Prompt Cookbook" />
+  <title>Document Data Dictionaries | Coding Prompt Cookbook</title>
+  <meta name="description" content="Document Data Dictionaries | Coding Prompt Cookbook" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta property="og:title" content="Document Data Dictionaries | Coding Prompt Cookbook" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data generation | Coding Prompt Cookbook" />
+  <meta name="twitter:title" content="Document Data Dictionaries | Coding Prompt Cookbook" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="code-to-function.html"/>
+<link rel="prev" href="column-synthesis.html"/>
+<link rel="next" href="debug-error.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -278,21 +278,133 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="generate" class="section level1 hasAnchor">
-<h1>Data generation<a href="generate.html#generate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="data-dictionary" class="section level1 hasAnchor">
+<h1>Document Data Dictionaries<a href="data-dictionary.html#data-dictionary" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ingredients-2" class="section level2 hasAnchor">
+<h2>Ingredients<a href="data-dictionary.html#ingredients-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><a href="synthesize-data.html#synthesize-data">Synthesize data to match script requirements</a></li>
-<li><a href="column-synthesis.html#column-synthesis">Synthesize data to match column names</a></li>
+<li>Dataset information</li>
+<li>Variable descriptions</li>
+<li>Data types</li>
+<li>Valid values/ranges</li>
+<li>Missing value codes</li>
+<li>Dependencies/relationships</li>
 </ul>
+</div>
+<div id="instructions-2" class="section level2 hasAnchor">
+<h2>Instructions<a href="data-dictionary.html#instructions-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use this prompt template:</p>
+<pre><code>Please create a data dictionary for:
 
+### Dataset overview:
+* Name: [dataset name]
+* Purpose: [main use]
+* Collection: [method/time]
+* Size: [dimensions]
+* Format: [file type]
+
+### Variable documentation:
+* Identifiers:
+    - [list ID variables]
+* Measures:
+    - [list measurement variables]
+* Categories:
+    - [list categorical variables]
+* Dates:
+    - [list temporal variables]
+* Calculated:
+    - [list derived variables]
+
+### Documentation needs:
+* Detail level: [basic/comprehensive]
+* Special requirements:
+    - [coding systems]
+    - [standards]
+    - [missing values]
+    - [relationships]
+
+### Additional information:
+* Quality notes: [known issues]
+* Dependencies: [related data]
+* Updates: [frequency]
+* Constraints: [limitations]</code></pre>
+</div>
+<div id="tips-2" class="section level2 hasAnchor">
+<h2>Tips<a href="data-dictionary.html#tips-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Use consistent format</li>
+<li>Define abbreviations</li>
+<li>Document missing values</li>
+<li>Specify units</li>
+<li>Note relationships</li>
+<li>Include constraints</li>
+<li>Add examples</li>
+<li>Track versions</li>
+</ul>
+</div>
+<div id="serves-2" class="section level2 hasAnchor">
+<h2>Serves<a href="data-dictionary.html#serves-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Research data</li>
+<li>Survey data</li>
+<li>Administrative data</li>
+<li>Time series</li>
+<li>Panel data</li>
+<li>Linked data</li>
+<li>Analytics datasets</li>
+</ul>
+</div>
+<div id="example-2" class="section level2 hasAnchor">
+<h2>Example<a href="data-dictionary.html#example-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>Please create a data dictionary for:
+
+### Dataset overview:
+* Name: patient_outcomes
+* Purpose: Track treatment results
+* Collection: Monthly hospital records
+* Size: 10,000 x 15
+* Format: CSV file
+
+### Variable documentation:
+* Identifiers:
+    - patient_id
+    - visit_id
+* Measures:
+    - vital signs
+    - lab results
+* Categories:
+    - diagnosis
+    - treatment
+* Dates:
+    - admission_date
+    - discharge_date
+* Calculated:
+    - length_of_stay
+    - risk_score
+
+### Documentation needs:
+* Detail level: comprehensive
+* Special requirements:
+    - ICD-10 codes
+    - LOINC codes
+    - Multiple NA types
+    - Patient-visit links
+
+### Additional information:
+* Quality notes: Some legacy codes
+* Dependencies: Links to pharmacy data
+* Updates: Monthly
+* Constraints: PHI restricted</code></pre>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="code-to-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="column-synthesis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="debug-error.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
