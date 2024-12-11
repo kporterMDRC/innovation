@@ -4,7 +4,7 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-# Fix a Git Merge Conflict
+## Fix a Git Merge Conflict {#git-merge}
 
 ## Ingredients
 

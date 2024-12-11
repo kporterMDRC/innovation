@@ -4,7 +4,7 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-# Translate Word to Markdown
+## Translate Word to Markdown {#column-synthesis}
 
 ## Ingredients
 

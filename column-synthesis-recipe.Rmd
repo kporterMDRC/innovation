@@ -4,7 +4,7 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-# Synthesize Data to Match Column Names
+## Synthesize Data to Match Column Names {#column-synthesis}
 
 ## Ingredients
 

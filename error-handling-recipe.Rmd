@@ -4,7 +4,7 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-# Add Error Handling
+## Add Error Handling {#error-handling}
 
 ## Ingredients
 

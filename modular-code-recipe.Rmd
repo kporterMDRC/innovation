@@ -4,7 +4,7 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-# Make Code More Modular
+## Make Code More Modular {#modular-code}
 
 ## Ingredients
 

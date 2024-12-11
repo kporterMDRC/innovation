@@ -4,7 +4,7 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-# Convert Code to Function
+## Convert Code to Function {#code-to-function}
 
 ## Ingredients
 

@@ -3,4 +3,34 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">Your Book Title</a></li>
+        <li><a href="./">Using LLM's to Code</a></li>
+        
+rmd_files:
+  - index.Rmd
+  # Starters
+  - outline-to-r-doc-recipe.Rmd
+  - shiny-dashboard-recipe-rmd.Rmd
+  # Create code from scratch
+  - package-code-recipe.Rmd
+  - function-examples-recipe.Rmd
+  # Demystifying Code
+  - explain-chunk-recipe.Rmd
+  - explain-stats-recipe.Rmd
+  # Troubleshooting
+  - debug-error-recipe.Rmd
+  - git-merge-recipe.Rmd
+  # Documentation
+  - roxygen2-doc-recipe.Rmd
+  - readme-recipe.Rmd
+  - data-dictionary-recipt.Rmd
+  - function-examples-recipe.Rmd
+  # Code expansion
+  - code-to-function-recipe.Rmd
+  - error-handling-recipe.Rmd
+  - modular-code-recipe.Rmd
+  # Translation
+  - sas-to-r-recipe.Rmd
+  - word-to-markdown-recipe.Rmd
+  # Data generation
+  - synthesize-data-recipe.Rmd
+  - column-synthesis-recipe.Rmd

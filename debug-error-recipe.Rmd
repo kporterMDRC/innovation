@@ -4,7 +4,7 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-# Debug Confusing Error Messages
+## Debug Confusing Error Messages {#debug-error}
 
 ## Ingredients
 

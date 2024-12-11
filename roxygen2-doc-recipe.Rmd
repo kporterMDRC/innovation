@@ -4,7 +4,7 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-# Generate Roxygen2 Documentation
+## Generate Roxygen2 Documentation {#roxygen2-doc}
 
 ## Ingredients
 
