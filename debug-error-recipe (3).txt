@@ -1,0 +1,140 @@
+---
+title: "Debug Confusing Error Messages Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Debug Confusing Error Messages
+
+## Ingredients
+
+* Error message
+* Code context
+* Environment info
+* Steps to reproduce
+* Package versions
+* Data sample
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please help debug this error:
+
+```
+[paste full error message]
+```
+
+### Code causing error:
+```r
+[paste minimal code that produces error]
+```
+
+### Reproducible example:
+```r
+# Sample data
+[minimal data example]
+
+# Steps to reproduce
+library(package_name)
+[steps to error]
+```
+
+### Environment details:
+* R version: [version]
+* Operating System: [OS]
+* Key packages:
+    - [package1]: [version]
+    - [package2]: [version]
+
+### Additional context:
+* Goal: [what you're trying to do]
+* When error occurs: [always/sometimes]
+* What I've tried: [debugging attempts]
+* Recent changes: [relevant updates]
+
+### Special considerations:
+* Data size: [if relevant]
+* Memory usage: [if relevant]
+* Performance: [if relevant]
+* Dependencies: [if relevant]
+````
+
+## Tips
+
+* Show exact error
+* Create minimal example
+* Include environment
+* Test reproduction
+* Check versions
+* Note patterns
+* Document attempts
+* Verify data
+
+## Serves
+
+* Runtime errors
+* Package issues
+* Installation problems
+* Memory errors
+* Syntax errors
+* Data issues
+* Performance problems
+
+## Example
+
+````
+Please help debug this error:
+
+```
+Error in select():
+! Problem while computing `ratio = value/group_total`.
+Caused by error in `/`:
+! non-numeric argument to binary operator
+```
+
+### Code causing error:
+```r
+data %>%
+  group_by(category) %>%
+  mutate(ratio = value/sum(value))
+```
+
+### Reproducible example:
+```r
+# Sample data
+data <- tibble(
+  category = c("A", "B", "A"),
+  value = c("10", "20", "30")  # Note: character
+)
+
+# Steps to reproduce
+library(dplyr)
+data %>%
+  group_by(category) %>%
+  mutate(ratio = value/sum(value))
+```
+
+### Environment details:
+* R version: 4.2.0
+* Operating System: Windows 10
+* Key packages:
+    - dplyr: 1.1.0
+    - tidyverse: 2.0.0
+
+### Additional context:
+* Goal: Calculate ratio within groups
+* When error occurs: Consistently
+* What I've tried: 
+    - Checked data types
+    - Printed intermediate results
+* Recent changes: Data import method
+
+### Special considerations:
+* Data size: Small example
+* Memory usage: Not applicable
+* Performance: Not applicable
+* Dependencies: Core tidyverse only
+````
+

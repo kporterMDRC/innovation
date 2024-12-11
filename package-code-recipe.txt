@@ -1,0 +1,100 @@
+---
+title: "Generate Code Using Package Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Generate Code Using a Specific Package
+
+## Ingredients
+
+* Package name
+* Task description
+* Data requirements
+* Output needs
+* Context information
+* Constraints
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please generate code using [package] for this task:
+
+### Task description:
+* Goal: [what to accomplish]
+* Input: [data/parameters needed]
+* Output: [desired result]
+* Context: [usage scenario]
+
+### Package details:
+* Package: [name and version]
+* Functions needed: [if known]
+* Dependencies: [if any]
+* Constraints: [limitations]
+
+### Code requirements:
+* Style: [base/tidyverse/etc]
+* Documentation: [level needed]
+* Error handling: [if needed]
+* Performance: [considerations]
+
+### Additional needs:
+* Examples: [yes/no]
+* Alternative approaches: [if desired]
+* Edge cases: [if needed]
+* Validation: [if required]
+````
+
+## Tips
+
+* Check package version
+* Use consistent style
+* Document assumptions
+* Include examples
+* Note dependencies
+* Consider alternatives
+* Test edge cases
+* Verify output
+
+## Serves
+
+* Data manipulation
+* Visualization
+* Analysis
+* Reporting
+* Modeling
+* Testing
+* Integration
+
+## Example
+
+````
+Please generate code using dplyr for this task:
+
+### Task description:
+* Goal: Filter and summarize sales data
+* Input: Sales dataset with date, region, product, amount
+* Output: Monthly totals by region
+* Context: Monthly reporting dashboard
+
+### Package details:
+* Package: dplyr (>= 1.0.0)
+* Functions needed: group_by, summarize, filter
+* Dependencies: tidyverse
+* Constraints: Handle missing values
+
+### Code requirements:
+* Style: tidyverse
+* Documentation: Inline comments
+* Error handling: Basic checks
+* Performance: Large dataset friendly
+
+### Additional needs:
+* Examples: Yes, with sample data
+* Alternative approaches: Base R version
+* Edge cases: Missing dates, zero sales
+* Validation: Check totals
+````
+

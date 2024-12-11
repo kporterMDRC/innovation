@@ -1,0 +1,232 @@
+---
+title: "Convert Outline to R Notebook/Bookdown Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Make R Notebook/Bookdown from Text Outline
+
+## Ingredients
+
+* Text outline
+* Output format choice (notebook/bookdown)
+* Chapter/section organization
+* Code needs
+* Output requirements
+* Cross-reference needs
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please convert this outline to [a R notebook/R bookdown site]:
+
+```
+[paste outline here]
+```
+
+### Structure needs:
+* Format: [notebook/bookdown]
+* Organization:
+    - [single/multiple files]
+    - [chapter structure]
+    - [section depth]
+* Special features:
+    - [cross-references]
+    - [bibliography]
+    - [numbering]
+    - [table of contents]
+
+### Code requirements:
+* Code chunks: [yes/no]
+* Languages: [R/Python/etc]
+* Output: [tables/plots/etc]
+* Chunk options: [specific needs]
+
+### Additional elements:
+* Theme: [if specific needed]
+* Citations: [if needed]
+* Custom formatting: [special needs]
+* Navigation: [requirements]
+````
+
+## Tips
+
+* Maintain hierarchy
+* Consider depth
+* Plan navigation
+* Think about code
+* Include examples
+* Note dependencies
+* Consider format
+* Check structure
+
+## Serves
+
+* Course materials
+* Documentation
+* Research reports
+* Technical books
+* Analysis reports
+* Tutorials
+* Guides
+
+## Example
+
+````
+Please convert this outline to an R bookdown site:
+
+```
+Data Analysis with R
+1. Introduction
+   - About this book
+   - Prerequisites
+   - Setup
+2. Data Import
+   - CSV files
+   - Excel files
+   - Database connections
+3. Data Cleaning
+   - Missing values
+   - Outliers
+   - Data types
+4. Analysis
+   - Summary statistics
+   - Visualization
+   - Models
+```
+
+### Structure needs:
+* Format: bookdown site
+* Organization:
+    - Separate file per chapter
+    - Two heading levels
+    - Numbered sections
+    - Chapter navigation
+* Special features:
+    - Code folding
+    - Figure/table numbers
+    - Cross-references
+    - Search function
+
+### Code requirements:
+* Code chunks: yes
+* Languages: R
+* Output: plots, tables
+* Chunk options:
+    - Echo code
+    - Show results
+    - Allow folding
+
+### Additional elements:
+* Theme: default
+* Citations: none needed
+* Custom formatting: none
+* Navigation: chapter menu
+````
+
+## Common Structures
+
+### 1. File Organization
+
+1. **R Notebook**
+```yaml
+---
+title: "Project Title"
+output: html_notebook
+---
+
+# Main heading
+
+## Sub heading
+
+### Sub-sub heading
+```
+
+2. **Bookdown Project**
+```
+project/
+├── index.Rmd
+├── 01-intro.Rmd
+├── 02-chapter2.Rmd
+├── _bookdown.yml
+├── _output.yml
+└── style.css
+```
+
+### 2. Configuration Files
+
+1. **_bookdown.yml**
+```yaml
+book_filename: "book"
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true
+output_dir: "docs"
+```
+
+2. **_output.yml**
+```yaml
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      collapse: subsection
+      scroll_highlight: yes
+    download: ["pdf", "epub"]
+```
+
+### 3. Content Elements
+
+1. **Code Chunks**
+````markdown
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r chunk-name}
+# R code here
+```
+````
+
+2. **Cross-References**
+```markdown
+# Chapter Title {#chapter-label}
+
+See Chapter \@ref(chapter-label)
+
+See Figure \@ref(fig:plot-label)
+```
+
+### 4. Special Features
+
+1. **Parts Organization**
+```markdown
+# (PART) Part Title {-}
+
+# First Chapter in Part
+```
+
+2. **Custom Blocks**
+```markdown
+::: {.note}
+Note content here
+:::
+
+::: {.warning}
+Warning content here
+:::
+```
+
+3. **Math/Equations**
+```markdown
+Inline math: $y = mx + b$
+
+Display math:
+$$
+y = \beta_0 + \beta_1x + \epsilon
+$$
+```
+

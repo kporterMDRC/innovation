@@ -1,0 +1,183 @@
+---
+title: "Debug Confusing Error Messages Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Debug Confusing Error Messages
+
+## Ingredients
+
+* Full error message
+* Code that produced error
+* Sample data (if applicable)
+* Package versions
+* Steps to reproduce
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please help debug this error:
+
+```
+[paste full error message]
+```
+
+### Code causing the error:
+```r
+[paste minimal code that produces error]
+```
+
+### Reproducible example:
+```r
+# Sample data
+example_data <- [minimal data that shows error]
+
+# Steps to reproduce
+library(package_name)
+[steps that lead to error]
+```
+
+### Environment details:
+* R version: [version]
+* RStudio version: [if applicable]
+* Operating system: [OS and version]
+* Key packages:
+    * [package1]: [version]
+    * [package2]: [version]
+
+### Additional information:
+* Expected behavior: [what should happen]
+* When error occurs: [always/sometimes]
+* What I've tried: [debugging attempts]
+* Recent changes: [relevant updates]
+````
+
+## Tips
+
+* Use `sessionInfo()` for details
+* Create minimal example
+* Show exact error message
+* Note when error started
+* Include `traceback()`
+* Share warning messages too
+* Mention console output
+
+## Serves
+
+* Syntax errors
+* Runtime errors
+* Package conflicts
+* Memory issues
+* Installation problems
+* Dependencies
+* Performance errors
+
+## Example
+
+````
+Please help debug this error:
+
+```
+Error in select():
+! Can't subset columns that don't exist.
+✖ Column `totals` doesn't exist.
+```
+
+### Code causing the error:
+```r
+data %>%
+  group_by(category) %>%
+  select(category, totals, date) %>%
+  summarize(avg = mean(totals))
+```
+
+### Reproducible example:
+```r
+# Sample data
+data <- tibble(
+  category = c("A", "B", "A", "B"),
+  total = c(10, 20, 30, 40),  # Note: 'total' not 'totals'
+  date = Sys.Date() - 0:3
+)
+
+# Steps to reproduce
+library(dplyr)
+data %>%
+  group_by(category) %>%
+  select(category, totals, date) %>%
+  summarize(avg = mean(totals))
+```
+
+### Environment details:
+* R version: 4.2.0
+* RStudio version: 2023.06.0
+* Operating system: macOS 12.6
+* Key packages:
+    * dplyr: 1.1.0
+    * tidyverse: 2.0.0
+
+### Additional information:
+* Expected behavior: Calculate average totals by category
+* When error occurs: Consistently
+* What I've tried:
+    * Checked column names with names(data)
+    * Verified data structure with str(data)
+    * Ran each pipe step separately
+* Recent changes: Updated tidyverse packages
+````
+
+## Debugging Process Flow
+
+### 1. Error Understanding
+* Read error message carefully
+* Note specific variables/functions
+* Check error pattern
+* Review related warnings
+
+### 2. Problem Isolation
+* Minimize code example
+* Test components separately
+* Verify data structures
+* Check function inputs
+
+### 3. Solution Approaches
+* Fix common causes first
+* Test assumptions
+* Check documentation
+* Search error message
+
+### 4. Prevention Strategies
+* Add error checking
+* Improve documentation
+* Create test cases
+* Monitor dependencies
+
+## Common Error Patterns
+
+### 1. Data Problems
+* Missing values
+* Wrong data types
+* Column name mismatches
+* Empty datasets
+
+### 2. Function Issues
+* Wrong arguments
+* Missing parameters
+* Incompatible inputs
+* Scope problems
+
+### 3. Package Problems
+* Version conflicts
+* Missing dependencies
+* Installation issues
+* Load order problems
+
+### 4. Memory/Performance
+* Large datasets
+* Resource limits
+* Inefficient code
+* System constraints
+

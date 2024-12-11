@@ -1,0 +1,119 @@
+---
+title: "Explain Statistical Output Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Explain Statistical Output
+
+## Ingredients
+
+* Statistical output
+* Analysis context
+* Statistical background
+* Specific questions
+* Data description
+* Interpretation needs
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please explain this statistical output:
+
+```
+[paste output here]
+```
+
+### Analysis context:
+* Goal: [analysis purpose]
+* Data background:
+    - Response: [dependent variable]
+    - Predictors: [independent variables]
+    - Sample size: [if known]
+    - Data type: [experimental/observational]
+
+### My background:
+* Statistical knowledge: [basic/intermediate/advanced]
+* Familiar with: [concepts you know]
+* Unclear about: [confusing concepts]
+* Software experience: [relevant packages]
+
+### Specific needs:
+* Interpretation focus:
+    - [list parts needing explanation]
+    - [specific metrics of interest]
+    - [practical implications]
+* Format preferences:
+    - [technical/non-technical]
+    - [level of detail]
+    - [visualization needs]
+
+### Additional questions:
+* Assumptions: [if relevant]
+* Diagnostics: [if needed]
+* Alternatives: [if interested]
+* Follow-up: [next steps]
+````
+
+## Tips
+
+* Start with overview
+* Explain step by step
+* Use plain language
+* Provide context
+* Include examples
+* Note assumptions
+* Suggest diagnostics
+* Consider alternatives
+
+## Serves
+
+* Model summaries
+* Test results
+* ANOVA output
+* Regression analysis
+* Classification metrics
+* Diagnostic tests
+* Summary statistics
+
+## Example
+
+````
+Please explain this statistical output:
+
+```r
+Call:
+glm(formula = success ~ age + experience + score, 
+    family = binomial, data = candidates)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.0523  -0.8235   0.4514   0.8642   2.1256  
+
+Coefficients:
+             Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  -2.3456    0.8234  -2.849   0.0044 ** 
+age           0.0234    0.0123   1.902   0.0571 .  
+experience    0.3456    0.0945   3.657   0.0003 ***
+score         0.0567    0.0234   2.423   0.0154 *  
+
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Null deviance: 234.56 on 169 degrees of freedom
+Residual deviance: 187.89 on 166 degrees of freedom
+AIC: 195.89
+```
+
+### Analysis context:
+* Goal: Predict candidate success
+* Data background:
+    - Response: Success (yes/no)
+    - Predictors: Age, experience, test score
+    - Sample size: 170 candidates
+    - Data type: Observational
+
+### My background:
+* Statistical

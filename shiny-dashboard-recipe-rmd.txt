@@ -1,0 +1,119 @@
+---
+title: "Build Shiny Dashboard Template Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Build a Shiny Dashboard Template
+
+## Ingredients
+
+* Dashboard components
+* Layout structure
+* User interface elements
+* Server logic
+* Data requirements
+* Theme preferences
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please create a Shiny dashboard template with:
+
+### Dashboard structure:
+* Layout: 
+    - [sidebar/navbar/tabs]
+    - [panels/boxes/rows]
+    - [header/footer]
+* Navigation:
+    - [menu structure]
+    - [page organization]
+    - [links between sections]
+
+### Components needed:
+* Inputs:
+    - [list input types]
+    - [interactive elements]
+    - [filters/controls]
+* Outputs:
+    - [plots/tables/text]
+    - [download options]
+    - [dynamic updates]
+
+### Design requirements:
+* Theme: [style preferences]
+* Colors: [color scheme]
+* Responsive: [yes/no]
+* Custom CSS: [if needed]
+
+### Additional features:
+* Loading spinners: [yes/no]
+* Error handling: [requirements]
+* User feedback: [notifications/messages]
+* Performance: [considerations]
+````
+
+## Tips
+
+* Start with layout
+* Plan user flow
+* Consider modularity
+* Include error handling
+* Add loading states
+* Document dependencies
+* Test responsiveness
+* Consider performance
+
+## Serves
+
+* Data visualizations
+* Analytics tools
+* Monitoring systems
+* Report generators
+* Interactive tools
+* Admin panels
+* User interfaces
+
+## Example
+
+````
+Please create a Shiny dashboard template with:
+
+### Dashboard structure:
+* Layout: 
+    - Sidebar navigation
+    - Three main panels
+    - Fixed header
+* Navigation:
+    - Overview page
+    - Detail analysis
+    - Settings page
+    - Help section
+
+### Components needed:
+* Inputs:
+    - Date range picker
+    - Category filters
+    - Search box
+    - Action buttons
+* Outputs:
+    - Summary metrics
+    - Time series plots
+    - Data tables
+    - Download reports
+
+### Design requirements:
+* Theme: AdminLTE
+* Colors: Blue/white
+* Responsive: yes
+* Custom CSS: minimal
+
+### Additional features:
+* Loading spinners: yes
+* Error handling: user messages
+* User feedback: notifications
+* Performance: caching needed
+````
+

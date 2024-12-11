@@ -1,0 +1,153 @@
+---
+title: "Make Code More Modular Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Make Code More Modular
+
+## Ingredients
+
+* Original code
+* Component structure
+* Dependencies
+* Testing requirements
+* Documentation needs
+* Interface requirements
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please help make this code more modular:
+
+```r
+[paste code here]
+```
+
+### Code analysis:
+* Current structure:
+    - [main components]
+    - [dependencies]
+    - [flow patterns]
+* Pain points:
+    - [maintenance issues]
+    - [testing problems]
+    - [reuse limitations]
+* Goals:
+    - [improvements needed]
+    - [specific outcomes]
+    - [maintainability needs]
+
+### Modularization needs:
+* Components needed:
+    - [list major functions]
+    - [data structures]
+    - [utilities]
+* Interface requirements:
+    - [input/output specs]
+    - [error handling]
+    - [validation]
+* Testing considerations:
+    - [unit tests]
+    - [integration]
+    - [validation]
+
+### Project context:
+* Team size: [number of developers]
+* Maintenance: [who/how often]
+* Updates: [frequency]
+* Constraints: [limitations]
+````
+
+## Tips
+
+* Identify patterns
+* Create functions
+* Define interfaces
+* Add documentation
+* Plan testing
+* Consider reuse
+* Handle errors
+* Think scale
+
+## Serves
+
+* Large scripts
+* Team projects
+* Legacy code
+* Package development
+* Maintenance
+* Testing
+* Documentation
+
+## Example
+
+````
+Please help make this code more modular:
+
+```r
+# Load libraries
+library(tidyverse)
+library(lubridate)
+
+# Process data
+sales <- read_csv("sales.csv")
+sales$date <- as.Date(sales$date)
+sales$month <- floor_date(sales$date, "month")
+
+# Calculate summaries
+monthly_stats <- sales %>%
+  group_by(month, category) %>%
+  summarize(
+    total = sum(amount),
+    average = mean(amount),
+    count = n()
+  )
+
+# Create plots
+ggplot(monthly_stats, aes(x = month, y = total)) +
+  geom_line() +
+  facet_wrap(~category)
+
+# Export results
+write_csv(monthly_stats, "monthly_summary.csv")
+```
+
+### Code analysis:
+* Current structure:
+    - Single script
+    - Linear workflow
+    - Mixed concerns
+* Pain points:
+    - Hard-coded values
+    - No error handling
+    - Limited reusability
+* Goals:
+    - Separate concerns
+    - Enable reuse
+    - Add error checking
+
+### Modularization needs:
+* Components needed:
+    - Data loading
+    - Data processing
+    - Visualization
+    - Export utilities
+* Interface requirements:
+    - Function parameters
+    - Return values
+    - Error messages
+* Testing considerations:
+    - Unit test each component
+    - Integration tests
+    - Data validation
+
+### Project context:
+* Team size: 3 developers
+* Maintenance: Weekly updates
+* Updates: New features monthly
+* Constraints: Must run in under 5 min
+````
+

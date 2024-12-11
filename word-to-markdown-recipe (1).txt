@@ -1,0 +1,131 @@
+---
+title: "Translate Word to Markdown Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Translate Word to Markdown
+
+## Ingredients
+
+* Word document content
+* Formatting requirements
+* Structure needs
+* Special elements
+* Output format
+* Style guidelines
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please translate this Word content to Markdown:
+
+[paste Word content here]
+
+### Translation needs:
+* Output format:
+    - [basic/github/hugo/etc]
+    - [special formatting]
+* Element handling:
+    - Tables: [simple/complex]
+    - Images: [local/web/none]
+    - Lists: [nested/simple]
+    - Code blocks: [yes/no]
+
+### Document features:
+* Structure elements:
+    - [headings/levels]
+    - [lists/types]
+    - [tables/formats]
+    - [special elements]
+* Formatting:
+    - [bold/italic]
+    - [highlighting]
+    - [special characters]
+* Special content:
+    - [equations]
+    - [footnotes]
+    - [citations]
+    - [links]
+
+### Additional requirements:
+* Image handling: [approach]
+* Table alignment: [needs]
+* Link style: [preferences]
+* Spacing: [requirements]
+````
+
+## Tips
+
+* Preserve hierarchy
+* Match formatting
+* Handle images
+* Check tables
+* Verify lists
+* Keep links
+* Test rendering
+* Review spacing
+
+## Serves
+
+* Documentation
+* Websites
+* Reports
+* Blogs
+* Wikis
+* Tutorials
+* READMEs
+
+## Example
+
+````
+Please translate this Word content to Markdown:
+
+[Word content shows]
+Course Syllabus: Data Analysis
+    1. Introduction
+        a. Course Overview
+        b. Prerequisites
+    2. Methods
+        a. Statistical Approaches
+        b. Software Tools
+
+Table 1: Course Schedule
+Week | Topic | Assignment
+1 | Intro | Reading
+2 | Methods | Project
+
+*Important deadlines in italics*
+**Key concepts in bold**
+[Course website](http://example.com)
+
+### Translation needs:
+* Output format: 
+    - GitHub Markdown
+    - Code highlighting
+* Element handling:
+    - Tables: Simple
+    - Lists: Nested
+    - Code: Yes
+
+### Document features:
+* Structure elements:
+    - 2 heading levels
+    - Numbered lists
+    - Simple table
+* Formatting:
+    - Bold/italic text
+    - Hyperlinks
+    - Code blocks
+* Special content:
+    - Code snippets
+    - External links
+
+### Additional requirements:
+* Table alignment: Left
+* Link style: Inline
+* Spacing: Double
+````
+

@@ -1,0 +1,126 @@
+---
+title: "Add Error Handling Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Add Error Handling
+
+## Ingredients
+
+* Function code
+* Input requirements
+* Expected errors
+* Validation rules
+* Recovery actions
+* Warning conditions
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please add error handling to this function:
+
+```r
+[paste function code here]
+```
+
+### Function requirements:
+* Input validation:
+    - [param1]: [requirements]
+    - [param2]: [requirements]
+* Error conditions:
+    - [list error cases]
+    - [expected behavior]
+* Warning conditions:
+    - [list warning cases]
+    - [expected behavior]
+
+### Error handling needs:
+* Validation type:
+    - [strict/permissive]
+    - [recovery options]
+* Message style:
+    - [technical/user-friendly]
+    - [verbosity level]
+* Special cases:
+    - [edge cases]
+    - [recovery strategies]
+
+### Context:
+* Users: [target audience]
+* Usage: [where/how used]
+* Criticality: [impact of failures]
+* Dependencies: [external factors]
+````
+
+## Tips
+
+* Validate early
+* Be specific
+* Offer recovery
+* Use consistent messages
+* Consider users
+* Document errors
+* Test thoroughly
+* Plan recovery
+
+## Serves
+
+* Function development
+* Package creation
+* Data validation
+* User interfaces
+* Critical systems
+* Production code
+* API endpoints
+
+## Example
+
+````
+Please add error handling to this function:
+
+```r
+calculate_portfolio_returns <- function(prices,
+                                      weights,
+                                      dates) {
+  total_return <- sum(prices * weights)
+  return(total_return)
+}
+```
+
+### Function requirements:
+* Input validation:
+    - prices: numeric vector, non-negative
+    - weights: numeric vector, sum to 1
+    - dates: Date vector, ordered
+* Error conditions:
+    - Missing values
+    - Mismatched lengths
+    - Invalid data types
+    - Negative prices
+* Warning conditions:
+    - Single asset portfolio
+    - Short time period
+    - Extreme weights
+
+### Error handling needs:
+* Validation type:
+    - Strict for financial calculations
+    - No automatic corrections
+* Message style:
+    - Technical for financial users
+    - Include problematic values
+* Special cases:
+    - Zero weights
+    - Missing dates
+    - Price adjustments
+
+### Context:
+* Users: Financial analysts
+* Usage: Portfolio analytics
+* Criticality: High (financial impact)
+* Dependencies: Market data feeds
+````
+

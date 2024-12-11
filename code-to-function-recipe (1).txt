@@ -1,0 +1,114 @@
+---
+title: "Convert Code to Function Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Convert Code to Function
+
+## Ingredients
+
+* Code to convert
+* Function requirements
+* Input parameters
+* Return values
+* Error handling needs
+* Documentation needs
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please convert this code to a function:
+
+```r
+[paste code here]
+```
+
+### Function requirements:
+* Purpose: [what function should do]
+* Name: [proposed function name]
+* Inputs:
+    - [param1]: [type/purpose]
+    - [param2]: [type/purpose]
+* Return value: [what to return]
+
+### Additional needs:
+* Error checking: [required validations]
+* Documentation: [level needed]
+* Examples: [if needed]
+* Dependencies: [required packages]
+
+### Code context:
+* Current variables: [list key variables]
+* Current dependencies: [packages used]
+* Scope requirements: [where used]
+* Performance needs: [if any]
+````
+
+## Tips
+
+* Choose clear name
+* Define parameters
+* Structure returns
+* Add documentation
+* Include examples
+* Consider scope
+* Handle errors
+* Test cases
+
+## Serves
+
+* Script conversion
+* Code reusability
+* Package development
+* Process automation
+* Testing setup
+* Documentation
+* Workflow improvement
+
+## Example
+
+````
+Please convert this code to a function:
+
+```r
+# Current code processes sales data
+library(dplyr)
+
+# Calculate metrics
+sales_data <- read_csv("sales.csv")
+monthly_totals <- sales_data %>%
+  group_by(month = floor_date(date, "month")) %>%
+  summarize(
+    total_sales = sum(amount),
+    avg_sale = mean(amount),
+    n_transactions = n()
+  )
+
+# Export results
+write_csv(monthly_totals, "monthly_summary.csv")
+```
+
+### Function requirements:
+* Purpose: Process sales data and calculate monthly metrics
+* Name: calculate_monthly_sales
+* Inputs:
+    - input_file: path to sales data CSV
+    - output_file: path for results (optional)
+* Return value: Monthly summary dataframe
+
+### Additional needs:
+* Error checking: File existence, data format
+* Documentation: Full roxygen style
+* Examples: With sample data
+* Dependencies: dplyr, lubridate
+
+### Code context:
+* Current variables: sales_data, monthly_totals
+* Current dependencies: dplyr, readr, lubridate
+* Scope requirements: Part of reporting package
+* Performance needs: Handle large files
+````
+

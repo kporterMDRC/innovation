@@ -1,0 +1,221 @@
+---
+title: "Synthesize Data from Column Names Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Synthesize Data to Match Column Names
+
+## Ingredients
+
+* Column names list
+* Expected data types
+* Size requirements
+* Value constraints
+* Naming patterns
+* Common prefixes/suffixes
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please help synthesize data for these columns:
+
+```r
+columns <- c(
+  [paste column names here]
+)
+```
+
+### Data requirements:
+* Size: [number of rows needed]
+* Format: [data.frame/tibble/etc]
+* General rules:
+    - Missing values: [allowed/not allowed]
+    - Unique constraints: [if any]
+    - Date format: [if needed]
+    
+### Column name patterns:
+* ID columns: [patterns]
+* Date columns: [patterns]
+* Numeric columns: [patterns]
+* Category columns: [patterns]
+* Flag columns: [patterns]
+
+### Value guidelines:
+* Ranges: [min/max if known]
+* Distributions: [if specific needed]
+* Categories: [known values]
+* Dependencies: [between columns]
+* Special cases: [if any]
+````
+
+## Tips
+
+* Look for naming patterns
+* Check common prefixes
+* Consider suffixes
+* Note ID columns
+* Identify dates
+* Check for flags
+* Find categories
+* Note measurements
+
+## Serves
+
+* Test data creation
+* Mock datasets
+* Documentation
+* Examples
+* Prototypes
+* Training data
+* Demonstrations
+
+## Example
+
+````
+Please help synthesize data for these columns:
+
+```r
+columns <- c(
+  "customer_id",
+  "signup_date",
+  "plan_type",
+  "monthly_fee",
+  "is_active",
+  "last_payment_date",
+  "total_downloads",
+  "avg_daily_usage_hrs",
+  "referral_source"
+)
+```
+
+### Data requirements:
+* Size: 100 rows
+* Format: tibble
+* General rules:
+    - No missing values
+    - customer_id must be unique
+    - Dates between 2020-2024
+    
+### Column name patterns:
+* ID columns: ends in '_id'
+* Date columns: contains '_date'
+* Numeric columns: starts with 'total_', 'avg_'
+* Category columns: contains '_type', '_source'
+* Flag columns: starts with 'is_'
+
+### Value guidelines:
+* Ranges:
+    - monthly_fee: $5-50
+    - total_downloads: 0-1000
+    - avg_daily_usage: 0-24
+* Categories:
+    - plan_type: "basic", "premium", "enterprise"
+    - referral_source: "web", "app", "friend", "ad"
+* Dependencies:
+    - last_payment_date > signup_date
+    - monthly_fee depends on plan_type
+* Special cases:
+    - Include some inactive customers
+````
+
+## Pattern Recognition Guide
+
+### 1. Common Column Types
+
+1. **Identifiers**
+```r
+# Patterns: _id, id_, number
+id_patterns <- c("_id$", "^id", "_num$", "_number$")
+# Generation:
+ids <- sprintf("CUST%05d", 1:n)
+```
+
+2. **Dates**
+```r
+# Patterns: _date, _dt, _time
+date_patterns <- c("_date$", "_dt$", "^date", "_time$")
+# Generation:
+dates <- seq(from = as.Date("2020-01-01"), by = "day", length.out = n)
+```
+
+3. **Categories**
+```r
+# Patterns: _type, _category, _class, _group
+cat_patterns <- c("_type$", "_category$", "_source$", "_group$")
+# Generation:
+categories <- sample(levels, n, replace = TRUE)
+```
+
+### 2. Value Generation
+
+1. **Numeric Values**
+```r
+# Amounts
+amounts <- round(runif(n, min, max), 2)
+
+# Counts
+counts <- rpois(n, lambda = 10)
+
+# Percentages
+percentages <- round(runif(n, 0, 100), 1)
+```
+
+2. **Categorical Values**
+```r
+# Simple categories
+status <- sample(c("active", "inactive"), n, replace = TRUE)
+
+# Weighted categories
+types <- sample(
+  c("basic", "premium", "enterprise"),
+  n,
+  replace = TRUE,
+  prob = c(0.6, 0.3, 0.1)
+)
+```
+
+3. **Flags/Indicators**
+```r
+# Boolean
+is_active <- sample(c(TRUE, FALSE), n, replace = TRUE)
+
+# Y/N
+yn_flag <- sample(c("Y", "N"), n, replace = TRUE)
+```
+
+### 3. Special Cases
+
+1. **Dependent Values**
+```r
+# Value based on category
+price <- ifelse(type == "premium",
+                runif(n, 50, 100),
+                runif(n, 10, 49))
+
+# Sequential dates
+end_date <- start_date + sample(1:365, n, replace = TRUE)
+```
+
+2. **Unique Constraints**
+```r
+# Unique identifiers
+unique_ids <- make.unique(as.character(ids))
+
+# Unique combinations
+unique_pairs <- unique(
+  expand.grid(factor1 = levels1, factor2 = levels2)
+)
+```
+
+3. **Missing Values**
+```r
+# Random NAs
+values[sample(1:n, n * 0.1)] <- NA
+
+# Conditional NAs
+values[values > threshold] <- NA
+```
+

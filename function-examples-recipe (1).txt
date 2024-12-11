@@ -1,0 +1,134 @@
+---
+title: "Create Function Usage Examples Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Create Function Usage Examples
+
+## Ingredients
+
+* Function code
+* Input parameters
+* Return values
+* Common use cases
+* Edge cases
+* Error conditions
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please create usage examples for this function:
+
+```r
+[paste function code here]
+```
+
+### Function details:
+* Purpose: [what function does]
+* Parameters:
+    - [param1]: [description]
+    - [param2]: [description]
+* Returns: [output description]
+* Dependencies: [required packages]
+
+### Example needs:
+* Complexity levels:
+    - [basic usage]
+    - [intermediate cases]
+    - [advanced applications]
+* Special cases:
+    - [edge cases]
+    - [error handling]
+    - [performance]
+
+### Target audience:
+* User level: [beginner/intermediate/advanced]
+* Background: [assumed knowledge]
+* Common problems: [typical issues]
+* Use contexts: [where/how used]
+
+### Additional requirements:
+* Example data: [needs]
+* Error examples: [if needed]
+* Performance examples: [if needed]
+* Alternative approaches: [if desired]
+````
+
+## Tips
+
+* Start simple
+* Build complexity
+* Show errors
+* Include data
+* Document output
+* Note alternatives
+* Consider context
+* Test examples
+
+## Serves
+
+* Package documentation
+* Function help
+* Tutorials
+* Vignettes
+* Training materials
+* Testing
+* Troubleshooting
+
+## Example
+
+````
+Please create usage examples for this function:
+
+```r
+filter_time_series <- function(data, 
+                             date_col = "date",
+                             value_col = "value",
+                             start_date = NULL,
+                             end_date = NULL,
+                             threshold = NULL,
+                             remove_outliers = FALSE) {
+  # Function definition here
+}
+```
+
+### Function details:
+* Purpose: Filter and clean time series data
+* Parameters:
+    - data: Time series dataframe
+    - date_col: Name of date column
+    - value_col: Name of value column
+    - start_date: Optional start date
+    - end_date: Optional end date
+    - threshold: Optional value threshold
+    - remove_outliers: Whether to remove outliers
+* Returns: Filtered dataframe
+* Dependencies: dplyr, lubridate
+
+### Example needs:
+* Complexity levels:
+    - Basic date filtering
+    - Multiple conditions
+    - Outlier removal
+* Special cases:
+    - Missing dates
+    - Invalid thresholds
+    - Date formats
+    - Large datasets
+
+### Target audience:
+* User level: intermediate
+* Background: Basic R and dplyr
+* Common problems: Date handling
+* Use contexts: Data preprocessing
+
+### Additional requirements:
+* Example data: Sample time series
+* Error examples: Yes
+* Performance examples: No
+* Alternative approaches: Yes
+````
+

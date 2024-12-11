@@ -1,0 +1,121 @@
+---
+title: "Explain Code Chunk Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Explain What a Code Chunk is Doing
+
+## Ingredients
+
+* Code chunk to explain
+* Context information
+* Programming background
+* Specific questions
+* Package versions
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please explain what this code chunk does:
+
+```r
+[paste code here]
+```
+
+### Context:
+* Location: [where in script/program]
+* Purpose: [what it should do]
+* Input data:
+    - Structure: [data format]
+    - Example: [sample data]
+* Output: [expected result]
+
+### My background:
+* R experience: [beginner/intermediate/advanced]
+* Familiar with: [concepts you know]
+* Unclear about: [confusing parts]
+* Package experience: [relevant packages]
+
+### Specific questions:
+* [list parts needing explanation]
+* [list concepts to clarify]
+* [note practical applications]
+* [ask about alternatives]
+
+### Additional information:
+* Performance concerns: [if any]
+* Error handling: [if relevant]
+* Style questions: [if any]
+* Alternative approaches: [if interested]
+````
+
+## Tips
+
+* Show context
+* Identify patterns
+* Note dependencies
+* Consider alternatives
+* Check documentation
+* Test assumptions
+* Verify output
+* Explain flow
+
+## Serves
+
+* Code review
+* Learning
+* Documentation
+* Troubleshooting
+* Optimization
+* Refactoring
+* Knowledge sharing
+
+## Example
+
+````
+Please explain what this code chunk does:
+
+```r
+results <- mtcars %>%
+  group_by(cyl) %>%
+  summarise(across(
+    where(is.numeric),
+    list(
+      avg = ~mean(., na.rm = TRUE),
+      sd = ~sd(., na.rm = TRUE)
+    ),
+    .names = "{.col}_{.fn}"
+  )) %>%
+  arrange(desc(cyl))
+```
+
+### Context:
+* Location: Data analysis script
+* Purpose: Calculate summary statistics
+* Input data:
+    - Structure: mtcars dataset
+    - Example: head(mtcars, 2)
+* Output: Summary by cylinder groups
+
+### My background:
+* R experience: intermediate
+* Familiar with: dplyr basics, group_by
+* Unclear about: across(), where()
+* Package experience: tidyverse
+
+### Specific questions:
+* How does across() work with where()?
+* What does the .names parameter do?
+* Why use ~ in the list?
+* Is there a simpler way?
+
+### Additional information:
+* Performance concerns: None
+* Error handling: NA handling
+* Style questions: Alternative syntax
+* Alternative approaches: Base R version
+````
+

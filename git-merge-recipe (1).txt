@@ -1,0 +1,129 @@
+---
+title: "Fix Git Merge Conflict Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Fix a Git Merge Conflict
+
+## Ingredients
+
+* Conflict markers
+* Both versions
+* Branch information
+* Context
+* Resolution strategy
+* Testing requirements
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please help resolve this merge conflict:
+
+```
+<<<<<<< HEAD
+[your current version]
+=======
+[incoming version]
+>>>>>>> branch-name
+```
+
+### Conflict context:
+* File: [filename and path]
+* Purpose: [file's role]
+* Current branch: [branch name]
+* Merging from: [branch name]
+* Project stage: [development/production]
+
+### Code details:
+* Language: [programming language]
+* Dependencies: [relevant packages/libraries]
+* Tests: [affected tests]
+* Documentation: [affected docs]
+
+### Resolution needs:
+* Requirements: [functionality needs]
+* Constraints: [limitations]
+* Testing: [validation needs]
+* Documentation: [update needs]
+
+### Additional considerations:
+* Performance: [if relevant]
+* Compatibility: [version requirements]
+* Side effects: [potential impacts]
+* Deployment: [release considerations]
+````
+
+## Tips
+
+* Review both versions
+* Understand context
+* Check dependencies
+* Consider tests
+* Update documentation
+* Verify functionality
+* Test thoroughly
+* Communicate changes
+
+## Serves
+
+* Code conflicts
+* Documentation conflicts
+* Configuration conflicts
+* Team collaboration
+* Version control
+* Release management
+* Code review
+
+## Example
+
+````
+Please help resolve this merge conflict:
+
+```python
+<<<<<<< HEAD
+def calculate_metrics(data):
+    """Calculate basic user engagement metrics"""
+    return {
+        'active_users': len(data),
+        'total_actions': sum(data['actions'])
+    }
+=======
+def calculate_metrics(data, include_advanced=False):
+    """Calculate user engagement metrics with optional advanced stats"""
+    metrics = {
+        'active_users': len(data),
+        'total_actions': sum(data['actions']),
+        'engagement_rate': sum(data['actions'])/len(data)
+    }
+>>>>>>> feature/advanced-metrics
+```
+
+### Conflict context:
+* File: metrics_calculator.py
+* Purpose: Core metrics calculation
+* Current branch: main
+* Merging from: feature/advanced-metrics
+* Project stage: development
+
+### Code details:
+* Language: Python
+* Dependencies: pandas
+* Tests: unit tests for metrics
+* Documentation: API docs
+
+### Resolution needs:
+* Requirements: Maintain backward compatibility
+* Constraints: Must work with existing data
+* Testing: Run full test suite
+* Documentation: Update function docs
+
+### Additional considerations:
+* Performance: Handle large datasets
+* Compatibility: Python 3.6+
+* Side effects: Dashboard updates
+* Deployment: Next sprint release
+````
+

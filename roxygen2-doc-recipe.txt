@@ -1,0 +1,173 @@
+---
+title: "Generate Roxygen2 Documentation Recipe"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Generate Roxygen2 Documentation
+
+## Ingredients
+
+* Function code
+* Function purpose
+* Parameter descriptions
+* Return value details
+* Examples of usage
+* Dependencies information
+
+## Instructions
+
+Use this prompt template:
+
+````
+Please generate roxygen2 documentation for this function:
+
+```r
+[paste function code here]
+```
+
+### Documentation needs:
+* Title style: [brief/descriptive/technical]
+* Description detail level: [basic/intermediate/comprehensive]
+* Example complexity: [basic/intermediate/advanced]
+* Include sections:
+    * [list needed sections like @details, @seealso, etc.]
+
+### Function context:
+* Package: [package name]
+* Dependencies: [required packages]
+* Related functions: [list related functions]
+* Intended users: [target audience]
+
+### Special requirements:
+* Export status: [exported/internal]
+* S3/S4 methods: [if applicable]
+* Inheritance: [if applicable]
+* Deprecation: [if applicable]
+````
+
+## Tips
+
+* Use consistent parameter naming
+* Include representative examples
+* Document return value structure
+* Note side effects
+* Reference related functions
+* Include edge cases
+* Specify data requirements
+* Add package links when relevant
+
+## Serves
+
+* Function documentation
+* Method documentation
+* Package data documentation
+* Class documentation
+* Package-level documentation
+* Dataset documentation
+* Re-export documentation
+
+## Example
+
+````
+Please generate roxygen2 documentation for this function:
+
+```r
+calculate_portfolio_stats <- function(returns, 
+                                    weights = NULL,
+                                    rebalance_freq = "monthly",
+                                    risk_free = 0) {
+  
+  # Validate inputs
+  if (!is.numeric(returns)) stop("returns must be numeric")
+  if (!is.null(weights) && length(weights) != ncol(returns)) {
+    stop("weights length must match number of assets")
+  }
+  
+  # Set equal weights if none provided
+  if (is.null(weights)) {
+    weights <- rep(1/ncol(returns), ncol(returns))
+  }
+  
+  # Calculate portfolio returns
+  port_returns <- calculate_weighted_returns(returns, weights, rebalance_freq)
+  
+  # Calculate statistics
+  stats <- list(
+    mean_return = mean(port_returns),
+    volatility = sd(port_returns) * sqrt(252),
+    sharpe = (mean(port_returns) - risk_free) / 
+             (sd(port_returns) * sqrt(252)),
+    max_drawdown = calculate_max_drawdown(port_returns)
+  )
+  
+  return(stats)
+}
+```
+
+### Documentation needs:
+* Title style: technical
+* Description detail level: comprehensive
+* Example complexity: intermediate
+* Include sections:
+    * @details
+    * @seealso
+    * @references
+    * @note
+
+### Function context:
+* Package: portfolioAnalytics
+* Dependencies: 
+    * stats
+    * xts
+* Related functions:
+    * calculate_weighted_returns()
+    * calculate_max_drawdown()
+* Intended users: Finance professionals
+
+### Special requirements:
+* Export status: exported
+* S3 methods: supports matrix/xts/data.frame inputs
+* Inheritance: none
+* Deprecation: none
+````
+
+## Additional Tips for roxygen2
+
+### Common Tags
+* `@param` - Parameter description
+* `@return` - Return value
+* `@export` - Make function public
+* `@keywords` - Function categories
+* `@family` - Related functions
+* `@inheritParams` - Inherit parameter docs
+* `@section` - Custom sections
+
+### Formatting Guidelines
+* Use sentence case for titles
+* End sentences with periods
+* Use backticks for code
+* Use `\code{}` for R expressions
+* Use `\link{}` for function references
+* Indent examples for readability
+
+### Best Practices
+* Document all parameters
+* Include units/ranges
+* Note default values
+* Explain return structure
+* Show error conditions
+* Give worked examples
+* Cross-reference methods
+
+### Common Patterns
+* For S3 methods:
+  * `@method class generic`
+* For datasets:
+  * `@format` 
+  * `@source`
+* For packages:
+  * `@docType package`
+  * `@name package-name`
+* For deprecated functions:
+  * `@deprecated`
